@@ -31,6 +31,6 @@ O questionário monta uma mensagem com todas as respostas. O cliente envia por S
 
 ## Privacidade nas fotos
 
-Antes de publicar qualquer foto nova, conferir se aparece número de casa, placa de carro, rosto de cliente ou nome de empresa. Já foram borrados: os números das casas (pressure-washing.jpg e work-1.jpg), a placa do banco (commercial.jpg) e a placa na parede (work-2.jpg).
+Antes de publicar qualquer foto nova, conferir se aparece número de casa, placa de carro, rosto de cliente ou nome de empresa. Já foram borrados: os números das casas (pressure-washing.jpg e work-1.jpg) e a placa na parede (work-2.jpg). A logo do banco Amerant em commercial.jpg fica sem borrar, a pedido do Fellipe (28/out).
 
 Site feito por [Fellipe Pinho](https://github.com/felliperobertopinhopires-tech) · PineWeb
