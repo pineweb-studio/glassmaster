@@ -416,8 +416,7 @@ const CONTACT_Q = [
   {id:"phone", q:"Phone number", type:"tel", auto:"tel", req:true},
   {id:"email", q:"Email address", type:"email", auto:"email", req:true},
   {id:"address", q:"Service address", type:"text", auto:"street-address", req:true},
-  {id:"ptype", q:"Is the property residential or commercial?", opts:["Residential","Commercial"]},
-  {id:"photolink", q:"Photo link", hint:"Optional. Share photos from Google Photos, iCloud or Dropbox and paste the link here. You can also attach photos to the message.", type:"url", auto:"off", optional:true}
+  {id:"ptype", q:"Is the property residential or commercial?", opts:["Residential","Commercial"]}
 ];
 
 /* ===== helpers ===== */
@@ -502,7 +501,7 @@ function render(){
     const c = state.contact;
     html = `<div class="wz-step on"><h3>Where should we send your estimate?</h3><p class="sub">We only ask this once.</p>
       <div class="grid2">${CONTACT_Q.slice(0,4).map(q=>questionHTML("contact",q,c[q.id])).join("")}</div>
-      ${questionHTML("contact",CONTACT_Q[4],c.ptype)}${questionHTML("contact",CONTACT_Q[5],c.photolink)}</div>`;
+      ${questionHTML("contact",CONTACT_Q[4],c.ptype)}</div>`;
   } else if(cur==="review"){
     label = "Review & send";
     const msg = buildMessage();
@@ -514,7 +513,7 @@ function render(){
         ${CONFIG.email?`<a class="btn btn-mail" href="${mailLink(msg)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Send by email</a>`:""}
         <button type="button" class="btn btn-light" id="copy">Copy summary</button>
       </div>
-      <p class="send-note">${state.answers.hardwater?.photos?.startsWith("Yes")&&!state.contact.photolink?"Don't forget to attach the photos of the stained glass to the message. ":""}</p>
+      <p class="send-note">${state.answers.hardwater?.photos?.startsWith("Yes")?"Don't forget to attach the photos of the stained glass to the message. ":""}</p>
       <p class="send-note">By sending this request, you agree that GlassMaster Cleaning may contact you about your estimate by text, WhatsApp, phone or email. Message and data rates may apply. We never sell your information. <a href="privacy.html">Privacy Policy</a></p></div>`;
   } else {
     const s = SERVICES.find(x=>x.id===cur), a = state.answers[cur] ||= {};
@@ -575,7 +574,6 @@ function buildMessage(){
     lines.push("");
   });
   lines.push("▸ CONTACT", `• Name: ${c.name}`, `• Phone: ${c.phone}`, `• Email: ${c.email}`, `• Address: ${c.address}`, `• Property: ${c.ptype}`);
-  if(c.photolink) lines.push(`• Photos: ${c.photolink}`);
   return lines.join("\n");
 }
 
