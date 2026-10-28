@@ -21,7 +21,7 @@ Suba na pasta `img/` com o nome exato abaixo (`.jpg`, de preferência na horizon
 | `img/solar.jpg` | Limpeza de painéis solares (foto do Pexels, uso comercial livre) |
 | `img/logo.png` | Logo redonda (topo e rodapé) |
 | `img/logo-full.png` | Logo completa (reserva) |
-| `img/work-1.jpg` a `img/work-10.jpg` | Galeria "Recent work" |
+| `img/work-1.jpg` a `img/work-23.jpg` | Galeria "Recent work" (ordem definida em `FOTOS.work`; work-11 a 13 são as fotos do Instagram que o cliente pediu, 28/out) |
 
 As fotos de cada serviço aparecem na página e também no questionário de orçamento.
 
@@ -31,7 +31,7 @@ O questionário monta uma mensagem com todas as respostas. O cliente envia por S
 
 ## Privacidade nas fotos
 
-Antes de publicar qualquer foto nova, conferir se aparece número de casa, placa de carro, rosto de cliente ou nome de empresa. Já foram borrados: os números das casas (pressure-washing.jpg e work-1.jpg) e a placa na parede (work-2.jpg). A logo do banco Amerant em commercial.jpg fica sem borrar, a pedido do Fellipe (28/out).
+Antes de publicar qualquer foto nova, conferir se aparece número de casa, placa de carro, rosto de cliente ou nome de empresa. Já foram borrados: os números das casas (pressure-washing.jpg e work-1.jpg) a placa na parede (work-2.jpg) e a placa da construtora "greydoor" (work-13.jpg). A logo do banco Amerant em commercial.jpg fica sem borrar, a pedido do Fellipe (28/out).
 
 Site feito por [Fellipe Pinho](https://github.com/felliperobertopinhopires-tech) · PineWeb
 
