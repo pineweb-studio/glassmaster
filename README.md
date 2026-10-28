@@ -21,7 +21,7 @@ Suba na pasta `img/` com o nome exato abaixo (`.jpg`, de preferência na horizon
 | `img/solar.jpg` | Limpeza de painéis solares (foto do Pexels, uso comercial livre) |
 | `img/logo.png` | Logo redonda (topo e rodapé) |
 | `img/logo-full.png` | Logo completa (reserva) |
-| `img/work-1.jpg` a `img/work-9.jpg` e `img/work-11.jpg` a `img/work-24.jpg` | Galeria "Recent work" (ordem definida em `FOTOS.work`; work-11 a 13 são as fotos do Instagram que o cliente pediu e work-14 a 24 vêm da pasta Site-2 do cliente, 28/out) |
+| `img/work-1.jpg` a `img/work-9.jpg` e `img/work-11.jpg` a `img/work-34.jpg` | Galeria "Recent work" (ordem definida em `FOTOS.work`; work-11 a 13 são as fotos do Instagram que o cliente pediu e work-14 a 24 vêm da pasta Site-2 do cliente, 28/out; work-25 a 34 e as versões atuais de work-11 e 13 vêm das fotos que o cliente mandou por WhatsApp, 28/out) |
 
 As fotos de cada serviço aparecem na página e também no questionário de orçamento.
 
