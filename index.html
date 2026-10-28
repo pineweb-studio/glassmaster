@@ -150,8 +150,8 @@ textarea{min-height:90px;resize:vertical}
 .send{display:grid;gap:10px;margin-top:20px}
 .send .btn{width:100%}
 .send-note{font-size:.86rem;color:var(--muted);margin-top:12px}
-.btn-wa{background:#1FAF5A;color:#fff}
-.btn-wa:hover{background:#18984d}
+.btn-wa{background:#13803F;color:#fff}
+.btn-wa:hover{background:#0F6B34}
 .btn-mail{background:var(--navy);color:#fff}
 .btn-mail:hover{background:var(--ink)}
 
@@ -319,12 +319,13 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
   <div class="wrap foot">
     <a class="brand" href="#top"><img class="brand-logo" src="img/logo.png" alt=""><span>GlassMaster<small>Cleaning</small></span></a>
     <span>Professional Care. Clear Results. South Florida &copy; <span id="yr"></span></span>
+    <a href="privacy.html">Privacy, Terms &amp; Accessibility</a>
     <a href="https://www.instagram.com/glassmastercleaning/" target="_blank" rel="noopener">@glassmastercleaning</a>
     <span>Site by <a href="https://pine-web-site.pages.dev" target="_blank" rel="noopener">PineWeb</a></span>
   </div>
 </footer>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 /* ===== Business info: edit here ===== */
@@ -478,13 +479,13 @@ const steps = () => ["pick", ...SERVICES.filter(s=>state.picked.has(s.id)).map(s
 
 function optButtons(scope, q, current){
   const sel = q.multi ? (current||[]) : [current];
-  return `<div class="opts" role="group">${q.opts.map(o=>`<button type="button" class="opt" data-scope="${scope}" data-q="${q.id}" data-v="${esc(o)}" ${q.multi?'data-multi="1"':""} aria-pressed="${sel.includes(o)}">${esc(o)}</button>`).join("")}</div>`;
+  return `<div class="opts" role="group" aria-labelledby="ql-${scope}-${q.id}">${q.opts.map(o=>`<button type="button" class="opt" data-scope="${scope}" data-q="${q.id}" data-v="${esc(o)}" ${q.multi?'data-multi="1"':""} aria-pressed="${sel.includes(o)}">${esc(o)}</button>`).join("")}</div>`;
 }
 function questionHTML(scope, q, current){
   const hint = q.hint ? ` <span class="hint">(${q.hint})</span>` : "";
-  if(q.opts) return `<div class="q" data-qid="${q.id}"><span class="ql">${q.q}${hint}</span>${optButtons(scope,q,current)}</div>`;
-  if(q.text) return `<div class="q" data-qid="${q.id}"><label for="f-${scope}-${q.id}">${q.q}${hint}</label><textarea id="f-${scope}-${q.id}" data-scope="${scope}" data-q="${q.id}">${esc(current||"")}</textarea></div>`;
-  return `<div class="q" data-qid="${q.id}"><label for="f-${q.id}">${q.q}${q.hint?`<span class="hint" style="display:block;margin-top:2px">${q.hint}</span>`:""}</label><input id="f-${q.id}" type="${q.type}" autocomplete="${q.auto}" data-scope="${scope}" data-q="${q.id}" value="${esc(current||"")}"></div>`;
+  if(q.opts) return `<div class="q" data-qid="${q.id}"><span class="ql" id="ql-${scope}-${q.id}">${q.q}${hint}</span>${optButtons(scope,q,current)}</div>`;
+  if(q.text) return `<div class="q" data-qid="${q.id}"><label for="f-${scope}-${q.id}">${q.q}${hint}</label><textarea id="f-${scope}-${q.id}"${q.optional?"":" aria-required=\"true\""} data-scope="${scope}" data-q="${q.id}">${esc(current||"")}</textarea></div>`;
+  return `<div class="q" data-qid="${q.id}"><label for="f-${q.id}">${q.q}${q.hint?`<span class="hint" style="display:block;margin-top:2px">${q.hint}</span>`:""}</label><input id="f-${q.id}"${q.optional?"":" aria-required=\"true\""} type="${q.type}" autocomplete="${q.auto}" data-scope="${scope}" data-q="${q.id}" value="${esc(current||"")}"></div>`;
 }
 
 function render(){
@@ -506,14 +507,15 @@ function render(){
     label = "Review & send";
     const msg = buildMessage();
     html = `<div class="wz-step on"><h3>All set, ${esc(state.contact.name.split(" ")[0])}!</h3><p class="sub">Send your request with one tap. The message opens ready to go, you just press send.</p>
-      <div class="summary">${esc(msg)}</div>
+      <div class="summary" tabindex="0" role="region" aria-label="Your request">${esc(msg)}</div>
       <div class="send">
         <a class="btn btn-primary" href="${smsLink(msg)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/></svg>Send by text message</a>
         <a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Send on WhatsApp</a>
         ${CONFIG.email?`<a class="btn btn-mail" href="${mailLink(msg)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Send by email</a>`:""}
         <button type="button" class="btn btn-light" id="copy">Copy summary</button>
       </div>
-      <p class="send-note">${state.answers.hardwater?.photos?.startsWith("Yes")&&!state.contact.photolink?"Don't forget to attach the photos of the stained glass to the message. ":""}</p></div>`;
+      <p class="send-note">${state.answers.hardwater?.photos?.startsWith("Yes")&&!state.contact.photolink?"Don't forget to attach the photos of the stained glass to the message. ":""}</p>
+      <p class="send-note">By sending this request, you agree that GlassMaster Cleaning may contact you about your estimate by text, WhatsApp, phone or email. Message and data rates may apply. We never sell your information. <a href="privacy.html">Privacy Policy</a></p></div>`;
   } else {
     const s = SERVICES.find(x=>x.id===cur), a = state.answers[cur] ||= {};
     label = s.name;
@@ -541,7 +543,7 @@ function store(el){
       el.parentElement.querySelectorAll(".opt").forEach(b=>b.setAttribute("aria-pressed", b===el));
     }
   } else bucket[q] = el.value.trim();
-  el.closest(".q")?.classList.remove("err");
+  el.closest(".q")?.classList.remove("err"); el.removeAttribute("aria-invalid");
 }
 
 function validate(){
@@ -555,9 +557,9 @@ function validate(){
     let v = bucket[q.id], ok = Array.isArray(v) ? v.length>0 : !!v;
     if(ok && q.type==="email") ok = /^\S+@\S+\.\S+$/.test(v);
     if(ok && q.type==="tel") ok = v.replace(/\D/g,"").length>=7;
-    if(!ok){ const el = $(`#wz-body .q[data-qid="${q.id}"]`); el.classList.add("err"); bad ||= el; }
+    if(!ok){ const el = $(`#wz-body .q[data-qid="${q.id}"]`); el.classList.add("err"); el.querySelector("input,textarea")?.setAttribute("aria-invalid","true"); bad ||= el; }
   });
-  if(bad){ bad.scrollIntoView({behavior:"smooth",block:"center"}); toast("Please answer the highlighted question"); return false; }
+  if(bad){ bad.scrollIntoView({behavior:"smooth",block:"center"}); bad.querySelector("input,textarea,button")?.focus({preventScroll:true}); toast("Please answer the highlighted question"); return false; }
   return true;
 }
 
@@ -585,8 +587,10 @@ $("#wizard").addEventListener("click", e=>{
   else if(e.target.id==="copy"){ navigator.clipboard?.writeText(buildMessage()).then(()=>toast("Summary copied"),()=>toast("Could not copy")); }
 });
 $("#wizard").addEventListener("input", e=>{ if(e.target.dataset.q) store(e.target); });
-$("#wz-next").onclick = ()=>{ if(validate()){ state.step++; render(); $("#wizard").scrollIntoView({behavior:"smooth",block:"start"}); } };
-$("#wz-back").onclick = ()=>{ state.step--; render(); };
+/* move keyboard / screen reader focus to the new step title */
+const focusStep = ()=>{ const h=$("#wz-body h3"); if(h){ h.tabIndex=-1; h.focus({preventScroll:true}); } };
+$("#wz-next").onclick = ()=>{ if(validate()){ state.step++; render(); focusStep(); $("#wizard").scrollIntoView({behavior:"smooth",block:"start"}); } };
+$("#wz-back").onclick = ()=>{ state.step--; render(); focusStep(); };
 document.querySelectorAll("[data-pre]").forEach(a=>a.addEventListener("click",()=>{ state.picked.add(a.dataset.pre); state.step=0; render(); }));
 
 /* ===== page behaviour ===== */
