@@ -21,7 +21,7 @@ Suba na pasta `img/` com o nome exato abaixo (`.jpg`, de preferência na horizon
 | `img/solar.jpg` | Limpeza de painéis solares (foto do Pexels, uso comercial livre) |
 | `img/logo.png` | Logo redonda (topo e rodapé) |
 | `img/logo-full.png` | Logo completa (reserva) |
-| `img/work-1.jpg` a `img/work-23.jpg` | Galeria "Recent work" (ordem definida em `FOTOS.work`; work-11 a 13 são as fotos do Instagram que o cliente pediu, 28/out) |
+| `img/work-1.jpg` a `img/work-9.jpg` e `img/work-11.jpg` a `img/work-24.jpg` | Galeria "Recent work" (ordem definida em `FOTOS.work`; work-11 a 13 são as fotos do Instagram que o cliente pediu e work-14 a 24 vêm da pasta Site-2 do cliente, 28/out) |
 
 As fotos de cada serviço aparecem na página e também no questionário de orçamento.
 
@@ -31,7 +31,7 @@ O questionário monta uma mensagem com todas as respostas. O cliente envia por S
 
 ## Privacidade nas fotos
 
-Antes de publicar qualquer foto nova, conferir se aparece número de casa, placa de carro, rosto de cliente ou nome de empresa. Já foram borrados: os números das casas (pressure-washing.jpg e work-1.jpg) a placa na parede (work-2.jpg) e a placa da construtora "greydoor" (work-13.jpg). A logo do banco Amerant em commercial.jpg fica sem borrar, a pedido do Fellipe (28/out).
+Antes de publicar qualquer foto nova, conferir se aparece número de casa, placa de carro, rosto de cliente ou nome de empresa. Já foram borrados: os números das casas (pressure-washing.jpg e work-1.jpg) a placa na parede (work-2.jpg) a placa da construtora "greydoor" (work-13.jpg) e os números das lojas "420" (work-16.jpg) e "15" (work-24.jpg). A logo do banco Amerant em commercial.jpg fica sem borrar, a pedido do Fellipe (28/out).
 
 Site feito por [Fellipe Pinho](https://github.com/felliperobertopinhopires-tech) · PineWeb
 
