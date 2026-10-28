@@ -180,6 +180,12 @@ textarea{min-height:90px;resize:vertical}
 @media (max-width:640px){.grid2{grid-template-columns:1fr}.wz-body{padding:24px 18px}.wz-top{padding:18px}}
 .q.err .opts,.q.err input{animation:shake .3s}
 .q.err > label,.q.err > .ql{color:#C2410C}
+.fmsg{margin:6px 0 0;font-size:.86rem;font-weight:600;color:#C2410C}
+.fmsg:empty{display:none}
+.grid2.addr{grid-template-columns:2fr 1fr}
+@media (max-width:640px){.grid2.addr{grid-template-columns:1fr}}
+.fmsg.warn{color:#8A5A00}
+.q.err input{border-color:#C2410C}
 @keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 .wz-nav{display:flex;justify-content:space-between;gap:12px;padding:20px 32px;border-top:1px solid var(--line);background:#fbfdff}
 .wz-nav .btn{padding:12px 22px}
@@ -256,7 +262,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
       <a href="#area" data-i18n="n_area">Service area</a>
       <a href="#contact" data-i18n="n_contact">Contact</a>
       <a class="btn btn-primary" href="#quote" data-i18n="n_quote">Get an estimate</a>
-      <button type="button" class="lang-btn" id="lang-btn" lang="es" aria-label="Ver el sitio en español">ES</button>
+      <button type="button" class="lang-btn" id="lang-btn" lang="es" aria-label="ES: Ver el sitio en español">ES</button>
     </nav>
   </div>
 </header>
@@ -530,7 +536,8 @@ const CONTACT_Q_EN = [
   {id:"name", q:"Full name", type:"text", auto:"name", req:true},
   {id:"phone", q:"Phone number", type:"tel", auto:"tel", req:true},
   {id:"email", q:"Email address", type:"email", auto:"email", req:true},
-  {id:"address", q:"Service address", type:"text", auto:"street-address", req:true},
+  {id:"address", q:"Service address", hint:"Street and number", type:"text", auto:"street-address", req:true},
+  {id:"zip", q:"ZIP code", type:"text", auto:"postal-code", req:true},
   {id:"ptype", q:"Is the property residential or commercial?", opts:["Residential","Commercial"]}
 ];
 
@@ -596,7 +603,8 @@ const CONTACT_Q_ES = [
   {id:"name", q:"Nombre completo", type:"text", auto:"name", req:true},
   {id:"phone", q:"Número de teléfono", type:"tel", auto:"tel", req:true},
   {id:"email", q:"Correo electrónico", type:"email", auto:"email", req:true},
-  {id:"address", q:"Dirección del servicio", type:"text", auto:"street-address", req:true},
+  {id:"address", q:"Dirección del servicio", hint:"Calle y número", type:"text", auto:"street-address", req:true},
+  {id:"zip", q:"Código postal (ZIP)", type:"text", auto:"postal-code", req:true},
   {id:"ptype", q:"¿La propiedad es residencial o comercial?", opts:["Residencial","Comercial"]}
 ];
 
@@ -611,7 +619,8 @@ const UI = {
     privacy:"privacy.html", serviceOf:(n,t)=>`Service ${n} of ${t}`, stepOf:(n,t)=>`Step ${n} of ${t}`, cont:"Continue", reviewBtn:"Review my request", getEst:"Get an estimate",
     chooseOne:"Choose at least one service", answerHl:"Please answer the highlighted question", copied:"Summary copied", noCopy:"Could not copy",
     hi:"Hi GlassMaster! I'd like to know more about your services.", subjQ:"Question about your services", subjEst:"Estimate request", msgStart:"Hi GlassMaster! I'd like an estimate.",
-    contactHdr:"CONTACT", fName:"Name", fPhone:"Phone", fEmail:"Email", fAddress:"Address", fProperty:"Property", langBtn:"ES", langLabel:"Ver el sitio en español", langOther:"es" },
+    contactHdr:"CONTACT", fName:"Name", fPhone:"Phone", fEmail:"Email", fAddress:"Address", fZip:"ZIP", fProperty:"Property",
+    e_name:"Please enter your first and last name.", e_phone:"Please enter a valid phone number, like (754) 272-5100.", e_email:"Please enter a valid email, like name@gmail.com.", e_emailTypo:m=>`Please check your email. Did you mean ${m}?`, e_emailTemp:"Please use an email you check, not a temporary one.", e_address:"Please enter the street and house number, like 123 Main St.", e_zip:"Please enter a 5-digit ZIP code, like 33301.", w_zip:"This ZIP may be outside our usual service area. You can still send it and we'll confirm.", langBtn:"ES", langLabel:"Ver el sitio en español", langOther:"es" },
   es: { title:"GlassMaster Cleaning | Limpieza de ventanas y exteriores en el sur de la Florida", area:"Atendemos los condados de Broward, Palm Beach y Miami-Dade",
     pickLabel:"Elija sus servicios", pickH:"¿En qué le podemos ayudar?", pickSub:"Seleccione uno o más servicios.", selAll:"Seleccionar todos los servicios", clearSel:"Quitar selección",
     contactLabel:"Sus datos de contacto", contactH:"¿A dónde le enviamos su presupuesto?", contactSub:"Solo se lo pedimos una vez.",
@@ -622,7 +631,8 @@ const UI = {
     privacy:"privacy-es.html", serviceOf:(n,t)=>`Servicio ${n} de ${t}`, stepOf:(n,t)=>`Paso ${n} de ${t}`, cont:"Continuar", reviewBtn:"Revisar mi solicitud", getEst:"Pedir presupuesto",
     chooseOne:"Elija al menos un servicio", answerHl:"Por favor responda la pregunta marcada", copied:"Resumen copiado", noCopy:"No se pudo copiar",
     hi:"¡Hola GlassMaster! Me gustaría saber más sobre sus servicios.", subjQ:"Pregunta sobre sus servicios", subjEst:"Solicitud de presupuesto", msgStart:"¡Hola GlassMaster! Me gustaría un presupuesto.",
-    contactHdr:"CONTACTO", fName:"Nombre", fPhone:"Teléfono", fEmail:"Correo", fAddress:"Dirección", fProperty:"Propiedad", langBtn:"EN", langLabel:"View the site in English", langOther:"en" }
+    contactHdr:"CONTACTO", fName:"Nombre", fPhone:"Teléfono", fEmail:"Correo", fAddress:"Dirección", fZip:"ZIP", fProperty:"Propiedad",
+    e_name:"Escriba su nombre y apellido.", e_phone:"Escriba un número de teléfono válido, como (754) 272-5100.", e_email:"Escriba un correo válido, como nombre@gmail.com.", e_emailTypo:m=>`Revise su correo. ¿Quiso decir ${m}?`, e_emailTemp:"Use un correo que usted revise, no uno temporal.", e_address:"Escriba la calle y el número, como 123 Main St.", e_zip:"Escriba un código postal de 5 dígitos, como 33301.", w_zip:"Este código postal puede estar fuera de nuestra zona habitual. Puede enviarlo igual y se lo confirmamos.", langBtn:"EN", langLabel:"View the site in English", langOther:"en" }
 };
 const TEXT_ES = {
   n_services:"Servicios", n_area:"Área de servicio", n_contact:"Contacto", n_quote:"Presupuesto",
@@ -734,8 +744,8 @@ function optButtons(scope, q, current){
 function questionHTML(scope, q, current){
   const hint = q.hint ? ` <span class="hint">(${q.hint})</span>` : "";
   if(q.opts) return `<div class="q" data-qid="${q.id}"><span class="ql" id="ql-${scope}-${q.id}">${q.q}${hint}</span>${optButtons(scope,q,current)}</div>`;
-  if(q.text) return `<div class="q" data-qid="${q.id}"><label for="f-${scope}-${q.id}">${q.q}${hint}</label><textarea id="f-${scope}-${q.id}"${q.optional?"":" aria-required=\"true\""} data-scope="${scope}" data-q="${q.id}">${esc(current||"")}</textarea></div>`;
-  return `<div class="q" data-qid="${q.id}"><label for="f-${q.id}">${q.q}${q.hint?`<span class="hint" style="display:block;margin-top:2px">${q.hint}</span>`:""}</label><input id="f-${q.id}"${q.optional?"":" aria-required=\"true\""} type="${q.type}" autocomplete="${q.auto}" data-scope="${scope}" data-q="${q.id}" value="${esc(current||"")}"></div>`;
+  if(q.text) return `<div class="q" data-qid="${q.id}"><label for="f-${scope}-${q.id}">${q.q}${hint}</label><textarea maxlength="600" id="f-${scope}-${q.id}"${q.optional?"":" aria-required=\"true\""} data-scope="${scope}" data-q="${q.id}">${esc(current||"")}</textarea></div>`;
+  return `<div class="q" data-qid="${q.id}"><label for="f-${q.id}">${q.q}${q.hint?`<span class="hint" style="display:block;margin-top:2px">${q.hint}</span>`:""}</label><input id="f-${q.id}"${q.optional?"":" aria-required=\"true\""} type="${q.type}" autocomplete="${q.auto}"${q.id==="zip"?' inputmode="numeric"':""} maxlength="${MAXLEN[q.id]||120}" aria-describedby="e-${q.id}" data-scope="${scope}" data-q="${q.id}" value="${esc(current||"")}"><p class="fmsg" id="e-${q.id}" aria-live="polite"></p></div>`;
 }
 
 function render(){
@@ -751,8 +761,10 @@ function render(){
     label = L().contactLabel;
     const c = state.contact;
     html = `<div class="wz-step on"><h3>${L().contactH}</h3><p class="sub">${L().contactSub}</p>
-      <div class="grid2">${CONTACT_Q.slice(0,4).map(q=>questionHTML("contact",q,c[q.id])).join("")}</div>
-      ${questionHTML("contact",CONTACT_Q[4],c.ptype)}</div>`;
+      <div class="grid2">${CONTACT_Q.slice(0,2).map(q=>questionHTML("contact",q,c[q.id])).join("")}</div>
+      ${questionHTML("contact",CONTACT_Q[2],c.email)}
+      <div class="grid2 addr">${CONTACT_Q.slice(3,5).map(q=>questionHTML("contact",q,c[q.id])).join("")}</div>
+      ${questionHTML("contact",CONTACT_Q[5],c.ptype)}</div>`;
   } else if(cur==="review"){
     label = L().reviewLabel;
     const msg = buildMessage();
@@ -773,6 +785,7 @@ function render(){
       ${s.questions.map(q=>questionHTML(cur,q,a[q.id])).join("")}</div>`;
   }
   body.innerHTML = html; loadPhotos(body);
+  if(cur==="contact") zipHint();
   $("#wz-label").textContent = label;
   $("#wz-count").textContent = L().stepOf(state.step+1, list.length);
   $("#wz-bar").style.width = `${((state.step+1)/list.length)*100}%`;
@@ -793,7 +806,41 @@ function store(el){
       el.parentElement.querySelectorAll(".opt").forEach(b=>b.setAttribute("aria-pressed", b===el));
     }
   } else bucket[q] = el.value.trim();
-  el.closest(".q")?.classList.remove("err"); el.removeAttribute("aria-invalid");
+  const box = el.closest(".q"); box?.classList.remove("err"); el.removeAttribute("aria-invalid");
+  const m = box?.querySelector(".fmsg"); if(m && !m.classList.contains("warn")) m.textContent = "";
+  if(q==="zip") zipHint();
+}
+
+/* ===== Data checks (PineWeb rule: catch typos and fake contact details before the request is sent) ===== */
+const MAXLEN = {name:80, phone:25, email:120, address:150, zip:10};
+const JUNK = /^(test|teste|testing|asdf|qwerty|fake|none|nada|xxx+|abc|aaa+|no|na|n\/a)$/i;
+const TYPOS = {"gmial.com":"gmail.com","gmai.com":"gmail.com","gmal.com":"gmail.com","gnail.com":"gmail.com","gmail.co":"gmail.com","gmail.con":"gmail.com","gmail.cm":"gmail.com","gmail.om":"gmail.com","gamil.com":"gmail.com",
+  "hotmial.com":"hotmail.com","hotmal.com":"hotmail.com","hotmail.co":"hotmail.com","hotmail.con":"hotmail.com","yaho.com":"yahoo.com","yahooo.com":"yahoo.com","yahoo.con":"yahoo.com",
+  "outlok.com":"outlook.com","outlook.co":"outlook.com","outlook.con":"outlook.com","iclod.com":"icloud.com","icloud.co":"icloud.com","icloud.con":"icloud.com","aol.co":"aol.com"};
+const TEMP_MAIL = ["mailinator.com","guerrillamail.com","10minutemail.com","yopmail.com","tempmail.com","temp-mail.org","trashmail.com","sharklasers.com","getnada.com","dispostable.com","maildrop.cc"];
+const usPhone = v => { let d = v.replace(/\D/g,""); if(d.length===11 && d[0]==="1") d = d.slice(1); return d; };
+const CHECK = {
+  name: v => { const w = v.trim().split(/\s+/);
+    return (w.length<2 || !w.every(x=>/^[\p{L}][\p{L}'’.\-]*$/u.test(x)) || w.join("").replace(/[^\p{L}]/gu,"").length<4 || w.some(x=>JUNK.test(x)) || /(.)\1{3}/i.test(v)) ? L().e_name : ""; },
+  phone: v => { const t = v.trim();
+    if(/^\+(?!1)/.test(t)){ const d = t.replace(/\D/g,""); return d.length>=8 && d.length<=15 && !/^(\d)\1+$/.test(d) ? "" : L().e_phone; } // other countries
+    const d = usPhone(t);
+    return d.length===10 && /^[2-9]\d{2}[2-9]\d{6}$/.test(d) && !/^(\d)\1+$/.test(d) && !/^\d{3}55501\d{2}$/.test(d) && d!=="2345678901" ? "" : L().e_phone; },
+  email: v => { const t = v.trim().toLowerCase();
+    if(!/^[a-z0-9._%+\-]+@[a-z0-9\-]+(\.[a-z0-9\-]+)*\.[a-z]{2,}$/.test(t) || /\.\.|^\.|\.@/.test(t)) return L().e_email;
+    const [user, dom] = t.split("@");
+    if(TYPOS[dom]) return L().e_emailTypo(`${user}@${TYPOS[dom]}`);
+    if(TEMP_MAIL.includes(dom)) return L().e_emailTemp;
+    return JUNK.test(user) ? L().e_email : ""; },
+  address: v => { const t = v.trim(); return t.length>=6 && /\d/.test(t) && (t.match(/\p{L}/gu)||[]).length>=3 && !/(.)\1{3}/.test(t) ? "" : L().e_address; },
+  zip: v => /^\d{5}(-\d{4})?$/.test(v.trim()) && !/^0{5}/.test(v.trim()) ? "" : L().e_zip
+};
+const prettyPhone = v => { const d = usPhone(v); return !/^\s*\+(?!1)/.test(v) && d.length===10 ? `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}` : v.trim(); };
+/* GlassMaster serves Broward, Palm Beach and Miami-Dade: ZIPs starting 330 to 334. Outside that we only warn. */
+const inArea = z => /^33[0-4]/.test(z.trim());
+function zipHint(){
+  const z = state.contact.zip||"", m = $("#e-zip"); if(!m) return;
+  if(!CHECK.zip(z) && !inArea(z)){ m.textContent = L().w_zip; m.classList.add("warn"); } else if(m.classList.contains("warn")){ m.textContent = ""; m.classList.remove("warn"); }
 }
 
 function validate(){
@@ -804,11 +851,13 @@ function validate(){
   let bad = null;
   qs.forEach(q=>{
     if(q.optional) return;
-    let v = bucket[q.id], ok = Array.isArray(v) ? v.length>0 : !!v;
-    if(ok && q.type==="email") ok = /^\S+@\S+\.\S+$/.test(v);
-    if(ok && q.type==="tel") ok = v.replace(/\D/g,"").length>=7;
-    if(!ok){ const el = $(`#wz-body .q[data-qid="${q.id}"]`); el.classList.add("err"); el.querySelector("input,textarea")?.setAttribute("aria-invalid","true"); bad ||= el; }
+    let v = bucket[q.id], ok = Array.isArray(v) ? v.length>0 : !!v, why = "";
+    if(cur==="contact" && CHECK[q.id]){ why = CHECK[q.id](v||""); ok = !why; }
+    const el = $(`#wz-body .q[data-qid="${q.id}"]`), msg = el.querySelector(".fmsg");
+    if(msg){ msg.textContent = why; msg.classList.remove("warn"); }
+    if(!ok){ el.classList.add("err"); el.querySelector("input,textarea")?.setAttribute("aria-invalid","true"); bad ||= el; }
   });
+  if(cur==="contact") zipHint();
   if(bad){ bad.scrollIntoView({behavior:"smooth",block:"center"}); bad.querySelector("input,textarea,button")?.focus({preventScroll:true}); toast(L().answerHl); return false; }
   return true;
 }
@@ -824,7 +873,7 @@ function buildMessage(){
     });
     lines.push("");
   });
-  lines.push(`▸ ${T.contactHdr}`, `• ${T.fName}: ${c.name}`, `• ${T.fPhone}: ${c.phone}`, `• ${T.fEmail}: ${c.email}`, `• ${T.fAddress}: ${c.address}`, `• ${T.fProperty}: ${c.ptype}`);
+  lines.push(`▸ ${T.contactHdr}`, `• ${T.fName}: ${c.name}`, `• ${T.fPhone}: ${prettyPhone(c.phone)}`, `• ${T.fEmail}: ${c.email.toLowerCase()}`, `• ${T.fAddress}: ${c.address}`, `• ${T.fZip}: ${c.zip}`, `• ${T.fProperty}: ${c.ptype}`);
   return lines.join("\n");
 }
 
@@ -855,7 +904,7 @@ function applyLang(lang){
   document.querySelectorAll("[data-i18n-alt]").forEach(el => { const k = el.dataset.i18nAlt; el.alt = es ? ALT_ES[k] : ALT_EN[k]; });
   if(T.area) $("#area-line").textContent = T.area + ". " + $("#area-line").textContent;
   $("#privacy-link").href = T.privacy;
-  const b = $("#lang-btn"); b.textContent = T.langBtn; b.lang = T.langOther; b.setAttribute("aria-label", T.langLabel);
+  const b = $("#lang-btn"); b.textContent = T.langBtn; b.lang = T.langOther; b.setAttribute("aria-label", `${T.langBtn}: ${T.langLabel}`);
   setLinks(); renderServices(); loadPhotos($("#svc-list"));
   /* answers are stored as option labels, so a language change starts the estimate over */
   state.answers = {}; state.step = Math.min(state.step, 0); render();
