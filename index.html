@@ -18,6 +18,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_US">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -81,6 +82,10 @@ header.solid{background:rgba(10,26,47,.94);backdrop-filter:blur(10px);box-shadow
 .nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-weight:600;font-size:.94rem}
 .nav-links a:hover{color:#fff}
 .nav-links .btn{padding:10px 20px;color:#fff}
+.lang-btn{font:inherit;font-weight:700;font-size:.85rem;letter-spacing:.04em;color:#fff;background:transparent;border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:8px 14px;cursor:pointer}
+.lang-btn:hover{border-color:#fff}
+.lang-btn:focus-visible{outline:2px solid var(--aqua);outline-offset:3px}
+@media (max-width:820px){.nav-links{gap:10px}.nav-links .btn{padding:10px 16px;white-space:nowrap}.lang-btn{padding:7px 11px}}
 @media (max-width:820px){.nav-links a:not(.btn){display:none}}
 
 /* hero */
@@ -247,10 +252,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
       <span>GlassMaster<small>Cleaning</small></span>
     </a>
     <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#area">Service area</a>
-      <a href="#contact">Contact</a>
-      <a class="btn btn-primary" href="#quote">Get an estimate</a>
+      <a href="#services" data-i18n="n_services">Services</a>
+      <a href="#area" data-i18n="n_area">Service area</a>
+      <a href="#contact" data-i18n="n_contact">Contact</a>
+      <a class="btn btn-primary" href="#quote" data-i18n="n_quote">Get an estimate</a>
+      <button type="button" class="lang-btn" id="lang-btn" lang="es" aria-label="Ver el sitio en español">ES</button>
     </nav>
   </div>
 </header>
@@ -259,17 +265,17 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
   <section class="hero">
     <div class="ph" data-photo="hero"></div>
     <div class="wrap hero-inner">
-      <span class="eyebrow" style="color:var(--aqua)">Professional window &amp; exterior cleaning</span>
-      <h1 style="margin-top:14px">Clean glass. <span class="serif">Clear results.</span></h1>
-      <p class="lead">Clean surfaces do more than look good. They protect your property's appearance, create a welcoming impression, and support regular property maintenance.</p>
+      <span class="eyebrow" style="color:var(--aqua)" data-i18n="h_eyebrow">Professional window &amp; exterior cleaning</span>
+      <h1 style="margin-top:14px" data-i18n="h_title">Clean glass. <span class="serif">Clear results.</span></h1>
+      <p class="lead" data-i18n="h_lead">Clean surfaces do more than look good. They protect your property's appearance, create a welcoming impression, and support regular property maintenance.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="#quote">Get a free estimate</a>
+        <a class="btn btn-primary" href="#quote" data-i18n="h_cta">Get a free estimate</a>
         <a class="btn btn-ghost" data-link="sms" href="#contact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/></svg>
-          Text us
+          <span data-i18n="h_text">Text us</span>
         </a>
       </div>
-      <div class="chips">
+      <div class="chips" data-i18n="h_chips">
         <span class="chip">Residential windows</span><span class="chip">Commercial windows</span><span class="chip">Hard water stains</span><span class="chip">Pressure washing</span><span class="chip">Solar panels</span>
       </div>
     </div>
@@ -278,9 +284,9 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
   <section id="services">
     <div class="wrap">
       <div class="head reveal">
-        <span class="eyebrow">Our services</span>
-        <h2>Windows first. <span class="serif">Everything around them</span> too.</h2>
-        <p>Pick what you need, or combine services in one visit. Every estimate is personalized to your property.</p>
+        <span class="eyebrow" data-i18n="sv_e">Our services</span>
+        <h2 data-i18n="sv_h">Windows first. <span class="serif">Everything around them</span> too.</h2>
+        <p data-i18n="sv_p">Pick what you need, or combine services in one visit. Every estimate is personalized to your property.</p>
       </div>
       <div class="svc-list" id="svc-list"></div>
     </div>
@@ -290,11 +296,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
     <div class="wrap">
       <div class="band reveal">
         <div>
-          <span class="eyebrow" style="color:var(--aqua)">Ongoing property maintenance</span>
-          <h2 style="margin:12px 0 16px">Clean is a schedule, <span class="serif">not a one-time fix.</span></h2>
-          <p>Window and exterior cleaning are most effective when treated as regular maintenance. A recurring schedule keeps your property consistently presentable instead of waiting until dirt and buildup become obvious. The right frequency depends on your location, surrounding trees and traffic, weather exposure, and your expectations.</p>
+          <span class="eyebrow" style="color:var(--aqua)" data-i18n="hw_e">Ongoing property maintenance</span>
+          <h2 style="margin:12px 0 16px" data-i18n="hw_h">Clean is a schedule, <span class="serif">not a one-time fix.</span></h2>
+          <p data-i18n="hw_p">Window and exterior cleaning are most effective when treated as regular maintenance. A recurring schedule keeps your property consistently presentable instead of waiting until dirt and buildup become obvious. The right frequency depends on your location, surrounding trees and traffic, weather exposure, and your expectations.</p>
         </div>
-        <div class="steps">
+        <div class="steps" data-i18n="hw_steps">
           <div class="step"><b>1</b><div><strong>Tell us what you need</strong><span>Choose one or more services and answer a few quick questions.</span></div></div>
           <div class="step"><b>2</b><div><strong>Send it in one tap</strong><span>Your answers go straight to us by text message or WhatsApp.</span></div></div>
           <div class="step"><b>3</b><div><strong>Get your estimate</strong><span>We recommend a service plan and send a personalized price.</span></div></div>
@@ -306,16 +312,16 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
   <section id="quote">
     <div class="wrap">
       <div class="head reveal" style="text-align:center;margin-inline:auto">
-        <span class="eyebrow">Request an estimate</span>
-        <h2>Your estimate in <span class="serif">about a minute.</span></h2>
-        <p>Answer only the questions for the services you choose. Your contact details are asked once, at the end.</p>
+        <span class="eyebrow" data-i18n="q_e">Request an estimate</span>
+        <h2 data-i18n="q_h">Your estimate in <span class="serif">about a minute.</span></h2>
+        <p data-i18n="q_p">Answer only the questions for the services you choose. Your contact details are asked once, at the end.</p>
       </div>
       <div class="wizard" id="wizard">
         <div class="wz-top"><span class="label" id="wz-label">Choose your services</span><span class="count" id="wz-count"></span></div>
         <div class="bar"><i id="wz-bar"></i></div>
         <div class="wz-body" id="wz-body"></div>
         <div class="wz-nav">
-          <button class="btn btn-light" id="wz-back" type="button">Back</button>
+          <button class="btn btn-light" id="wz-back" type="button" data-i18n="back">Back</button>
           <button class="btn btn-primary" id="wz-next" type="button">Continue</button>
         </div>
       </div>
@@ -325,35 +331,35 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
   <section id="work" style="padding-top:0">
     <div class="wrap">
       <div class="head reveal">
-        <span class="eyebrow">Recent work</span>
-        <h2>Homes we keep <span class="serif">crystal clear.</span></h2>
-        <p>A few of the properties we care for across South Florida.</p>
+        <span class="eyebrow" data-i18n="w_e">Recent work</span>
+        <h2 data-i18n="w_h">Homes we keep <span class="serif">crystal clear.</span></h2>
+        <p data-i18n="w_p">A few of the properties we care for across South Florida.</p>
       </div>
       <div class="gallery" id="gallery"></div>
-      <p style="margin-top:24px"><a class="btn btn-light" data-link="ig" href="#">See more on Instagram</a></p>
+      <p style="margin-top:24px"><a class="btn btn-light" data-link="ig" href="#" data-i18n="w_ig">See more on Instagram</a></p>
     </div>
   </section>
 
   <section id="before-after" style="padding-top:0">
     <div class="wrap">
       <div class="head reveal">
-        <span class="eyebrow">Before &amp; after</span>
-        <h2>See the <span class="serif">difference.</span></h2>
+        <span class="eyebrow" data-i18n="ba_e">Before &amp; after</span>
+        <h2 data-i18n="ba_h">See the <span class="serif">difference.</span></h2>
       </div>
       <div class="ba-grid">
         <figure class="ba reveal">
           <div class="ba-pics">
-            <div><img src="img/before-after/par1-before.jpg" alt="Glass shower door covered in white hard water spots before cleaning" width="720" height="960" loading="lazy"><span class="ba-tag">Before</span></div>
-            <div><img src="img/before-after/par1-after.jpg" alt="The same shower glass clear and spotless after hard water stain removal" width="720" height="960" loading="lazy"><span class="ba-tag after">After</span></div>
+            <div><img src="img/before-after/par1-before.jpg" alt="Glass shower door covered in white hard water spots before cleaning" data-i18n-alt="par1-before" width="720" height="960" loading="lazy"><span class="ba-tag" data-i18n="ba_before">Before</span></div>
+            <div><img src="img/before-after/par1-after.jpg" alt="The same shower glass clear and spotless after hard water stain removal" data-i18n-alt="par1-after" width="720" height="960" loading="lazy"><span class="ba-tag after" data-i18n="ba_after">After</span></div>
           </div>
-          <figcaption><strong>Shower glass · hard water stains</strong>Mineral spots and cloudy buildup removed from a glass shower enclosure.</figcaption>
+          <figcaption data-i18n="ba_c1"><strong>Shower glass · hard water stains</strong>Mineral spots and cloudy buildup removed from a glass shower enclosure.</figcaption>
         </figure>
         <figure class="ba reveal">
           <div class="ba-pics">
-            <div><img src="img/before-after/par2-before.jpg" alt="Exterior window with green stains on the wall below before cleaning" width="720" height="960" loading="lazy"><span class="ba-tag">Before</span></div>
-            <div><img src="img/before-after/par2-after.jpg" alt="The same window and wall clean after exterior cleaning" width="720" height="960" loading="lazy"><span class="ba-tag after">After</span></div>
+            <div><img src="img/before-after/par2-before.jpg" alt="Exterior window with green stains on the wall below before cleaning" data-i18n-alt="par2-before" width="720" height="960" loading="lazy"><span class="ba-tag" data-i18n="ba_before">Before</span></div>
+            <div><img src="img/before-after/par2-after.jpg" alt="The same window and wall clean after exterior cleaning" data-i18n-alt="par2-after" width="720" height="960" loading="lazy"><span class="ba-tag after" data-i18n="ba_after">After</span></div>
           </div>
-          <figcaption><strong>Windows &amp; exterior wall</strong>Window frames and the wall below cleaned of green buildup.</figcaption>
+          <figcaption data-i18n="ba_c2"><strong>Windows &amp; exterior wall</strong>Window frames and the wall below cleaned of green buildup.</figcaption>
         </figure>
       </div>
     </div>
@@ -362,14 +368,14 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
   <section id="area" style="padding-top:0">
     <div class="wrap">
       <div class="head reveal">
-        <span class="eyebrow">Service area</span>
-        <h2>Professional glass care across <span class="serif">South Florida.</span></h2>
-        <p>Don't see your city? Send us a message and we'll check availability for your area.</p>
+        <span class="eyebrow" data-i18n="ar_e">Service area</span>
+        <h2 data-i18n="ar_h">Professional glass care across <span class="serif">South Florida.</span></h2>
+        <p data-i18n="ar_p">Don't see your city? Send us a message and we'll check availability for your area.</p>
       </div>
       <div class="area-grid">
-        <div class="area-card main reveal"><small>Main area</small><h3>Broward County</h3><p>Coral Springs · Fort Lauderdale · Pompano Beach · Hollywood</p></div>
-        <div class="area-card reveal"><small>North</small><h3>Palm Beach County</h3><p>Boca Raton · Delray Beach · Boynton Beach · West Palm Beach</p></div>
-        <div class="area-card reveal"><small>South</small><h3>Miami-Dade County</h3><p>Aventura · Miami · Sunny Isles Beach · Doral</p></div>
+        <div class="area-card main reveal"><small data-i18n="ar_main">Main area</small><h3 data-i18n="ar_bw">Broward County</h3><p>Coral Springs · Fort Lauderdale · Pompano Beach · Hollywood</p></div>
+        <div class="area-card reveal"><small data-i18n="ar_n">North</small><h3 data-i18n="ar_pb">Palm Beach County</h3><p>Boca Raton · Delray Beach · Boynton Beach · West Palm Beach</p></div>
+        <div class="area-card reveal"><small data-i18n="ar_s">South</small><h3 data-i18n="ar_md">Miami-Dade County</h3><p>Aventura · Miami · Sunny Isles Beach · Doral</p></div>
       </div>
     </div>
   </section>
@@ -377,10 +383,10 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
   <section id="faq" style="padding-top:0">
     <div class="wrap">
       <div class="head reveal">
-        <span class="eyebrow">FAQ</span>
-        <h2>Good questions, <span class="serif">clear answers.</span></h2>
+        <span class="eyebrow" data-i18n="fq_e">FAQ</span>
+        <h2 data-i18n="fq_h">Good questions, <span class="serif">clear answers.</span></h2>
       </div>
-      <div class="faq">
+      <div class="faq" data-i18n="fq_list">
         <details class="faq-item reveal"><summary>How do I get a price?</summary><p>Use the estimate form above or send us a text. Answer a few quick questions about your property and we'll reply with a personalized estimate. Estimates are free.</p></details>
         <details class="faq-item reveal"><summary>How often should I have my windows cleaned?</summary><p>It depends on your location, nearby trees and traffic, weather exposure and how spotless you like your glass. Many properties do best on a regular schedule, and we'll suggest a frequency that fits yours in your estimate.</p></details>
         <details class="faq-item reveal"><summary>Can all hard water stains be removed?</summary><p>Most mineral buildup can be removed or greatly reduced. Stains that have been there for years can etch into the glass, and that damage can't always be fully reversed. Send us photos and we'll tell you what to expect before the visit.</p></details>
@@ -394,15 +400,15 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
   <section id="contact" style="background:var(--mist)">
     <div class="wrap">
       <div class="head reveal">
-        <span class="eyebrow">Contact</span>
-        <h2>Ready for a <span class="serif">clearer view?</span></h2>
-        <p id="area-line">Contact GlassMaster Cleaning to discuss your property, the surfaces you want cleaned, and how often you would like service.</p>
+        <span class="eyebrow" data-i18n="ct_e">Contact</span>
+        <h2 data-i18n="ct_h">Ready for a <span class="serif">clearer view?</span></h2>
+        <p id="area-line" data-i18n="ct_p">Contact GlassMaster Cleaning to discuss your property, the surfaces you want cleaned, and how often you would like service.</p>
       </div>
       <div class="contact-grid">
-        <a class="c-card" data-link="sms" href="#"><small>Text message</small><strong data-show="phone"></strong><span>Fastest reply</span></a>
-        <a class="c-card" data-link="wa" href="#"><small>WhatsApp</small><strong data-show="phone"></strong><span>Also available</span></a>
-        <a class="c-card" data-link="mail" data-needs="email" href="#"><small>Email</small><strong data-show="email"></strong><span>For detailed requests</span></a>
-        <a class="c-card" data-link="ig" href="#"><small>Instagram</small><strong data-show="ighandle"></strong><span>See our latest work</span></a>
+        <a class="c-card" data-link="sms" href="#"><small data-i18n="c_sms">Text message</small><strong data-show="phone"></strong><span data-i18n="c_sms2">Fastest reply</span></a>
+        <a class="c-card" data-link="wa" href="#"><small>WhatsApp</small><strong data-show="phone"></strong><span data-i18n="c_wa2">Also available</span></a>
+        <a class="c-card" data-link="mail" data-needs="email" href="#"><small data-i18n="c_mail">Email</small><strong data-show="email"></strong><span data-i18n="c_mail2">For detailed requests</span></a>
+        <a class="c-card" data-link="ig" href="#"><small>Instagram</small><strong data-show="ighandle"></strong><span data-i18n="c_ig2">See our latest work</span></a>
       </div>
     </div>
   </section>
@@ -411,10 +417,10 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
 <footer>
   <div class="wrap foot">
     <a class="brand" href="#top"><img class="brand-logo" src="img/logo.png" alt=""><span>GlassMaster<small>Cleaning</small></span></a>
-    <span>Professional Care. Clear Results. South Florida &copy; <span id="yr"></span></span>
-    <a href="privacy.html">Privacy, Terms &amp; Accessibility</a>
+    <span><span data-i18n="f_tag">Professional Care. Clear Results. South Florida</span> &copy; <span id="yr"></span></span>
+    <a href="privacy.html" id="privacy-link" data-i18n="f_priv">Privacy, Terms &amp; Accessibility</a>
     <a href="https://www.instagram.com/glassmastercleaning/" target="_blank" rel="noopener">@glassmastercleaning</a>
-    <span>Site by <a href="https://pine-web-site.pages.dev" target="_blank" rel="noopener">PineWeb</a></span>
+    <span><span data-i18n="f_by">Site by</span> <a href="https://pine-web-site.pages.dev" target="_blank" rel="noopener">PineWeb</a></span>
   </div>
 </footer>
 
@@ -449,7 +455,7 @@ const FOCUS = { solar: "30% 75%" };
 const STORIES = ["1 story","2 stories","3+ stories"];
 const SIDES = ["Exterior only","Interior only","Interior & exterior"];
 
-const SERVICES = [
+const SERVICES_EN = [
   { id:"residential", photo:"residential", name:"Residential Window Cleaning",
     what:"We clean residential windows and glass surfaces to remove everyday dust, fingerprints, pollen, and common surface buildup. Service can be customized for the home's needs and may include interior and exterior glass, where requested.",
     benefits:["A brighter, clearer view and more natural light coming through clean glass.","A well-maintained appearance that helps your home look cared for from both inside and outside.","Routine cleaning helps prevent dirt and mineral residue from building up over time. It is maintenance, not just a one-time cosmetic service.","Regular service can help identify stubborn spots or buildup early, before they become more difficult to address."],
@@ -504,13 +510,143 @@ const SERVICES = [
     ]}
 ];
 
-const CONTACT_Q = [
+const CONTACT_Q_EN = [
   {id:"name", q:"Full name", type:"text", auto:"name", req:true},
   {id:"phone", q:"Phone number", type:"tel", auto:"tel", req:true},
   {id:"email", q:"Email address", type:"email", auto:"email", req:true},
   {id:"address", q:"Service address", type:"text", auto:"street-address", req:true},
   {id:"ptype", q:"Is the property residential or commercial?", opts:["Residential","Commercial"]}
 ];
+
+/* ===== Spanish version (same ids and order as the English lists above) ===== */
+const PISOS = ["1 piso","2 pisos","3 pisos o más"];
+const LADOS = ["Solo exterior","Solo interior","Interior y exterior"];
+const NS = "No estoy seguro";
+const SERVICES_ES = [
+  { id:"residential", photo:"residential", name:"Limpieza de ventanas residenciales",
+    what:"Limpiamos ventanas y superficies de vidrio de casas para quitar el polvo del día a día, huellas, polen y suciedad común. El servicio se adapta a cada casa y puede incluir el vidrio interior y exterior, si lo desea.",
+    benefits:["Una vista más clara y más luz natural entrando por vidrios limpios.","Una apariencia bien cuidada que hace que su casa luzca atendida por dentro y por fuera.","La limpieza regular ayuda a evitar que la suciedad y los residuos minerales se acumulen con el tiempo. Es mantenimiento, no solo un servicio estético de una vez.","El servicio regular ayuda a detectar a tiempo manchas difíciles o acumulación, antes de que sean más difíciles de tratar."],
+    note:"Ideal para quienes quieren mantener sus ventanas limpias todo el año.",
+    questions:[
+      {id:"stories", q:"¿Cuántos pisos tiene la casa?", opts:PISOS},
+      {id:"panes", q:"¿Cuántos paneles de vidrio tiene la casa, más o menos?", opts:["1–10","11–20","21–35","36–50","50+",NS]},
+      {id:"side", q:"¿Qué servicio desea?", opts:LADOS},
+      {id:"screens", q:"¿Incluir limpieza de mallas (screens)?", opts:["Sí","No"]},
+      {id:"tracks", q:"¿Incluir rieles y marcos de las ventanas?", opts:["Sí","No"]}
+    ]},
+  { id:"commercial", photo:"commercial", name:"Limpieza de ventanas comerciales",
+    what:"Limpiamos vidrios en propiedades comerciales como oficinas, tiendas, gimnasios, restaurantes y áreas comunes de edificios. Los planes de limpieza se pueden organizar según el tráfico de la propiedad, sus estándares de presentación y su calendario de mantenimiento.",
+    benefits:["Causa una gran primera impresión en clientes, inquilinos y visitantes.","Ayuda a que vitrinas, entradas, recepciones y otras áreas de atención al público se vean profesionales y acogedoras.","Apoya la imagen de su negocio y la experiencia de quienes lo visitan.","El mantenimiento programado evita que los vidrios se vean descuidados y ayuda a mantener un estándar constante."],
+    note:"El servicio recurrente es una opción práctica para negocios que necesitan que su propiedad luzca profesional semana tras semana.",
+    questions:[
+      {id:"type", q:"¿Qué tipo de propiedad es?", opts:["Edificio comercial","Centro comercial","Gimnasio","Hotel","Restaurante","Otro"]},
+      {id:"stories", q:"¿Cuántos pisos tiene el edificio?", opts:["1 piso","2 pisos","3–5 pisos","6 pisos o más"]},
+      {id:"panes", q:"¿Cuántos paneles de vidrio tiene la propiedad, más o menos?", opts:["1–25","26–50","51–100","100+",NS]},
+      {id:"side", q:"¿Qué servicio desea?", opts:LADOS},
+      {id:"freq", q:"¿Con qué frecuencia desea el servicio?", opts:["Una sola vez","Mensual","Cada 3 meses","Cada 6 meses","Otra"]},
+      {id:"access", q:"¿Qué tan fácil es llegar a los vidrios?", opts:["Acceso fácil","Se necesita equipo especial",NS]}
+    ]},
+  { id:"power", photo:"power", name:"Lavado a presión",
+    what:"El lavado a presión quita suciedad, mugre, algas y otras acumulaciones de las superficies exteriores duras que lo permiten. Según la propiedad y la superficie, el servicio puede incluir entradas de autos, caminos, patios y otras áreas exteriores. Elegimos el método de limpieza según el material de la superficie y su estado.",
+    benefits:["Mejora la apariencia exterior, que se ve más limpia y mejor cuidada.","Quita la acumulación común que hace que caminos y otras áreas se vean sucios o descuidados.","Ayuda a mantener más limpias las entradas y las áreas exteriores de la casa.","La limpieza exterior regular ayuda a que la suciedad no se acumule demasiado entre un servicio y otro."],
+    note:"El método y la presión adecuados dependen de la superficie. Algunos materiales necesitan un lavado suave (soft wash) en lugar de alta presión.",
+    questions:[
+      {id:"areas", q:"¿Qué áreas desea lavar?", hint:"Seleccione todas las que apliquen", multi:true, opts:["Área de la piscina","Entrada de autos","Aceras y caminos","Patio","Exterior de la casa","Techo","Cerca","Otra"]},
+      {id:"stories", q:"¿Cuántos pisos tiene la casa?", opts:PISOS},
+      {id:"size", q:"¿Qué tan grande es el área, más o menos?", opts:["Pequeña","Mediana","Grande",NS]},
+      {id:"heavy", q:"¿Hay áreas con mucha suciedad, moho, algas o manchas?", opts:["Sí","No",NS]},
+      {id:"details", q:"¿Algo más que debamos saber?", hint:"Opcional", text:true, optional:true}
+    ]},
+  { id:"hardwater", photo:"hardwater", name:"Eliminación de manchas de agua dura",
+    what:"Ofrecemos un tratamiento especializado para depósitos minerales y manchas de agua dura en el vidrio. Estas marcas se forman cuando las gotas de agua se secan sobre la superficie y dejan residuos minerales. Primero evaluamos el vidrio y elegimos el método adecuado según la intensidad de las manchas y el estado de la ventana.",
+    benefits:["Ayuda a mejorar la claridad y la apariencia del vidrio con puntos blancos, marcas opacas o acumulación mineral.","Puede devolver un aspecto más limpio y parejo a ventanas que la limpieza común no logra mejorar del todo.","Trata un problema específico del vidrio, no solo la suciedad y las huellas del día a día.","Una evaluación temprana puede ayudar a que los depósitos no se vuelvan más difíciles de quitar con el tiempo."],
+    note:"La eliminación de manchas minerales es un servicio especializado y puede requerir un presupuesto aparte. Los resultados dependen de la intensidad de los depósitos y de si el vidrio está grabado o dañado de forma permanente. El grabado permanente no siempre se puede eliminar.",
+    questions:[
+      {id:"where", q:"¿Dónde están las manchas minerales?", hint:"Seleccione todas las que apliquen", multi:true, opts:["Ventanas","Vidrio de la ducha","Otras superficies de vidrio"]},
+      {id:"amount", q:"¿Cuántos paneles necesitan tratamiento, más o menos?", opts:["1–5","6–15","16+",NS]},
+      {id:"severity", q:"¿Qué tan fuertes son las manchas?", opts:["Pequeños puntos blancos","Vidrio opaco o empañado","Mucha acumulación mineral"]},
+      {id:"photos", q:"¿Puede enviarnos fotos del vidrio afectado?", opts:["Sí, las adjunto o comparto un enlace","Ahora no"]}
+    ]},
+  { id:"solar", photo:"solar", name:"Limpieza de paneles solares",
+    what:"Limpiamos la superficie de los paneles solares para quitar polvo, polen y otros residuos que se acumulan con el tiempo. La limpieza se hace con cuidado de la superficie del panel y siguiendo las recomendaciones del fabricante.",
+    benefits:["Ayuda a que los paneles reciban la luz del sol sin una capa de suciedad y residuos en el medio.","Puede ayudar a reducir las pérdidas de producción causadas por la suciedad; el efecto real depende de la cantidad y el tipo de acumulación y de las condiciones locales.","Apoya el cuidado regular del sistema solar y ayuda a que los paneles se vean limpios.","Un plan de limpieza programado ayuda a controlar el polvo y los residuos antes de que se acumulen demasiado."],
+    note:"La frecuencia de limpieza depende del entorno de la propiedad, la suciedad visible y las recomendaciones del fabricante del sistema solar. La limpieza no garantiza un aumento específico en la producción de energía.",
+    questions:[
+      {id:"stories", q:"¿Cuántos pisos tiene la casa?", opts:PISOS},
+      {id:"panels", q:"¿Cuántos paneles solares hay, más o menos?", opts:["1–10","11–20","21–30","31–40","40+",NS]}
+    ]}
+];
+const CONTACT_Q_ES = [
+  {id:"name", q:"Nombre completo", type:"text", auto:"name", req:true},
+  {id:"phone", q:"Número de teléfono", type:"tel", auto:"tel", req:true},
+  {id:"email", q:"Correo electrónico", type:"email", auto:"email", req:true},
+  {id:"address", q:"Dirección del servicio", type:"text", auto:"street-address", req:true},
+  {id:"ptype", q:"¿La propiedad es residencial o comercial?", opts:["Residencial","Comercial"]}
+];
+
+/* Interface texts. Keys in TEXT_ES match the data-i18n attributes in the HTML. */
+const UI = {
+  en: { title:document.title, area:CONFIG.area, pickLabel:"Choose your services", pickH:"What can we help you with?", pickSub:"Select one or more services.", selAll:"Select all services", clearSel:"Clear selection",
+    contactLabel:"Your contact details", contactH:"Where should we send your estimate?", contactSub:"We only ask this once.",
+    reviewLabel:"Review & send", allSet:"All set", reviewSub:"Send your request with one tap. The message opens ready to go, you just press send.", region:"Your request",
+    sendSms:"Send by text message", sendWa:"Send on WhatsApp", sendMail:"Send by email", copy:"Copy summary", yes:"Yes",
+    photosNote:"Don't forget to attach the photos of the stained glass to the message. ",
+    consent:'By sending this request, you agree that GlassMaster Cleaning may contact you about your estimate by text, WhatsApp, phone or email. Message and data rates may apply. We never sell your information. <a href="privacy.html">Privacy Policy</a>',
+    privacy:"privacy.html", serviceOf:(n,t)=>`Service ${n} of ${t}`, stepOf:(n,t)=>`Step ${n} of ${t}`, cont:"Continue", reviewBtn:"Review my request", getEst:"Get an estimate",
+    chooseOne:"Choose at least one service", answerHl:"Please answer the highlighted question", copied:"Summary copied", noCopy:"Could not copy",
+    hi:"Hi GlassMaster! I'd like to know more about your services.", subjQ:"Question about your services", subjEst:"Estimate request", msgStart:"Hi GlassMaster! I'd like an estimate.",
+    contactHdr:"CONTACT", fName:"Name", fPhone:"Phone", fEmail:"Email", fAddress:"Address", fProperty:"Property", langBtn:"ES", langLabel:"Ver el sitio en español", langOther:"es" },
+  es: { title:"GlassMaster Cleaning | Limpieza de ventanas y exteriores en el sur de la Florida", area:"Atendemos los condados de Broward, Palm Beach y Miami-Dade",
+    pickLabel:"Elija sus servicios", pickH:"¿En qué le podemos ayudar?", pickSub:"Seleccione uno o más servicios.", selAll:"Seleccionar todos los servicios", clearSel:"Quitar selección",
+    contactLabel:"Sus datos de contacto", contactH:"¿A dónde le enviamos su presupuesto?", contactSub:"Solo se lo pedimos una vez.",
+    reviewLabel:"Revisar y enviar", allSet:"¡Listo", reviewSub:"Envíe su solicitud con un toque. El mensaje se abre listo, solo tiene que presionar enviar.", region:"Su solicitud",
+    sendSms:"Enviar por mensaje de texto", sendWa:"Enviar por WhatsApp", sendMail:"Enviar por correo", copy:"Copiar resumen", yes:"Sí",
+    photosNote:"No olvide adjuntar al mensaje las fotos del vidrio manchado. ",
+    consent:'Al enviar esta solicitud, usted acepta que GlassMaster Cleaning lo contacte sobre su presupuesto por mensaje de texto, WhatsApp, teléfono o correo electrónico. Pueden aplicarse cargos por mensajes y datos. Nunca vendemos su información. <a href="privacy-es.html">Política de privacidad</a>',
+    privacy:"privacy-es.html", serviceOf:(n,t)=>`Servicio ${n} de ${t}`, stepOf:(n,t)=>`Paso ${n} de ${t}`, cont:"Continuar", reviewBtn:"Revisar mi solicitud", getEst:"Pedir presupuesto",
+    chooseOne:"Elija al menos un servicio", answerHl:"Por favor responda la pregunta marcada", copied:"Resumen copiado", noCopy:"No se pudo copiar",
+    hi:"¡Hola GlassMaster! Me gustaría saber más sobre sus servicios.", subjQ:"Pregunta sobre sus servicios", subjEst:"Solicitud de presupuesto", msgStart:"¡Hola GlassMaster! Me gustaría un presupuesto.",
+    contactHdr:"CONTACTO", fName:"Nombre", fPhone:"Teléfono", fEmail:"Correo", fAddress:"Dirección", fProperty:"Propiedad", langBtn:"EN", langLabel:"View the site in English", langOther:"en" }
+};
+const TEXT_ES = {
+  n_services:"Servicios", n_area:"Área de servicio", n_contact:"Contacto", n_quote:"Presupuesto",
+  h_eyebrow:"Limpieza profesional de ventanas y exteriores",
+  h_title:'Vidrios limpios. <span class="serif">Resultados claros.</span>',
+  h_lead:"Las superficies limpias hacen más que verse bien. Protegen la apariencia de su propiedad, causan una buena primera impresión y forman parte del mantenimiento regular.",
+  h_cta:"Pida un presupuesto gratis", h_text:"Envíenos un texto",
+  h_chips:'<span class="chip">Ventanas residenciales</span><span class="chip">Ventanas comerciales</span><span class="chip">Manchas de agua dura</span><span class="chip">Lavado a presión</span><span class="chip">Paneles solares</span>',
+  sv_e:"Nuestros servicios", sv_h:'Ventanas primero. <span class="serif">Y todo lo que las rodea</span> también.', sv_p:"Elija lo que necesita o combine servicios en una sola visita. Cada presupuesto se hace a la medida de su propiedad.",
+  hw_e:"Mantenimiento continuo de su propiedad", hw_h:'La limpieza es una rutina, <span class="serif">no un arreglo de una vez.</span>',
+  hw_p:"La limpieza de ventanas y exteriores funciona mejor como mantenimiento regular. Un calendario fijo mantiene su propiedad siempre presentable, en vez de esperar a que la suciedad y las manchas se noten. La frecuencia ideal depende de la ubicación, los árboles y el tráfico cercanos, la exposición al clima y sus expectativas.",
+  hw_steps:'<div class="step"><b>1</b><div><strong>Cuéntenos qué necesita</strong><span>Elija uno o más servicios y responda unas preguntas rápidas.</span></div></div><div class="step"><b>2</b><div><strong>Envíelo con un toque</strong><span>Sus respuestas nos llegan directo por mensaje de texto o WhatsApp.</span></div></div><div class="step"><b>3</b><div><strong>Reciba su presupuesto</strong><span>Le recomendamos un plan de servicio y le enviamos un precio personalizado.</span></div></div>',
+  q_e:"Pida un presupuesto", q_h:'Su presupuesto en <span class="serif">un minuto, más o menos.</span>', q_p:"Responda solo las preguntas de los servicios que elija. Sus datos de contacto se piden una sola vez, al final.",
+  back:"Atrás",
+  w_e:"Trabajos recientes", w_h:'Casas que mantenemos <span class="serif">impecables.</span>', w_p:"Algunas de las propiedades que cuidamos en el sur de la Florida.", w_ig:"Vea más en Instagram",
+  ba_e:"Antes y después", ba_h:'Vea la <span class="serif">diferencia.</span>', ba_before:"Antes", ba_after:"Después",
+  ba_c1:"<strong>Vidrio de ducha · manchas de agua dura</strong>Manchas minerales y capa opaca eliminadas de una mampara de vidrio.",
+  ba_c2:"<strong>Ventanas y pared exterior</strong>Marcos de ventana y la pared de abajo limpios de la capa verde.",
+  ar_e:"Área de servicio", ar_h:'Cuidado profesional de vidrios en todo <span class="serif">el sur de la Florida.</span>', ar_p:"¿No ve su ciudad? Envíenos un mensaje y verificamos la disponibilidad en su zona.",
+  ar_main:"Zona principal", ar_n:"Norte", ar_s:"Sur", ar_bw:"Condado de Broward", ar_pb:"Condado de Palm Beach", ar_md:"Condado de Miami-Dade",
+  fq_e:"Preguntas frecuentes", fq_h:'Buenas preguntas, <span class="serif">respuestas claras.</span>',
+  fq_list:'<details class="faq-item reveal"><summary>¿Cómo obtengo un precio?</summary><p>Use el formulario de presupuesto de arriba o envíenos un mensaje de texto. Responda unas preguntas rápidas sobre su propiedad y le enviaremos un presupuesto personalizado. Los presupuestos son gratis.</p></details><details class="faq-item reveal"><summary>¿Cada cuánto debo limpiar mis ventanas?</summary><p>Depende de la ubicación, los árboles y el tráfico cercanos, la exposición al clima y qué tan impecables le gustan sus vidrios. Muchas propiedades funcionan mejor con un calendario regular, y en su presupuesto le sugerimos la frecuencia adecuada.</p></details><details class="faq-item reveal"><summary>¿Se pueden quitar todas las manchas de agua dura?</summary><p>La mayoría de la acumulación mineral se puede quitar o reducir mucho. Las manchas que llevan años pueden grabarse en el vidrio, y ese daño no siempre se puede revertir del todo. Envíenos fotos y le diremos qué esperar antes de la visita.</p></details><details class="faq-item reveal"><summary>¿Necesito estar en casa durante el servicio?</summary><p>No siempre. Para el trabajo exterior solo necesitamos acceso seguro a las áreas que vamos a limpiar. Confirmamos los detalles con usted al programar.</p></details><details class="faq-item reveal"><summary>¿Qué pasa si llueve el día del servicio?</summary><p>Si el clima no es seguro o adecuado para el trabajo, le avisamos y reprogramamos con usted.</p></details><details class="faq-item reveal"><summary>¿Qué zonas atienden?</summary><p>El condado de Broward es nuestra zona principal, y también atendemos los condados de Palm Beach y Miami-Dade. Si no ve su ciudad, envíenos un mensaje y lo verificamos.</p></details>',
+  ct_e:"Contacto", ct_h:'¿Listo para <span class="serif">ver con más claridad?</span>',
+  ct_p:"Contacte a GlassMaster Cleaning para hablar de su propiedad, las superficies que quiere limpiar y con qué frecuencia desea el servicio.",
+  c_sms:"Mensaje de texto", c_sms2:"Respuesta más rápida", c_wa2:"También disponible", c_mail:"Correo electrónico", c_mail2:"Para solicitudes detalladas", c_ig2:"Vea nuestros trabajos recientes",
+  f_tag:"Cuidado profesional. Resultados claros. Sur de la Florida", f_priv:"Privacidad, términos y accesibilidad", f_by:"Sitio hecho por"
+};
+const ALT_ES = {
+  "par1-before":"Mampara de vidrio de ducha cubierta de manchas blancas de agua dura antes de la limpieza",
+  "par1-after":"El mismo vidrio de ducha transparente y sin manchas después de quitar el agua dura",
+  "par2-before":"Ventana exterior con manchas verdes en la pared de abajo antes de la limpieza",
+  "par2-after":"La misma ventana y la pared limpias después de la limpieza exterior"
+};
+
+/* current language: ?lang=, then the visitor's saved choice, then the browser language */
+const savedLang = (() => { try { return localStorage.getItem("gm-lang"); } catch(e){ return null; } })();
+let LANG = new URLSearchParams(location.search).get("lang") || savedLang || ((navigator.language||"").toLowerCase().startsWith("es") ? "es" : "en");
+if(LANG!=="es") LANG = "en";
+const L = () => UI[LANG];
+let SERVICES = SERVICES_EN, CONTACT_Q = CONTACT_Q_EN;
 
 /* ===== helpers ===== */
 const $ = s => document.querySelector(s);
@@ -539,20 +675,21 @@ $("#gallery").innerHTML = FOTOS.work.map((_,i)=>photo("work"+i,"g-item reveal"))
 /* ===== contact links ===== */
 const smsLink = body => `sms:+${CONFIG.phoneDigits}${body?`?&body=${encodeURIComponent(body)}`:""}`;
 const waLink = body => `https://wa.me/${CONFIG.phoneDigits}${body?`?text=${encodeURIComponent(body)}`:""}`;
-const mailLink = (body, subj="Estimate request") => `mailto:${CONFIG.email}?subject=${encodeURIComponent(subj)}${body?`&body=${encodeURIComponent(body)}`:""}`;
+const mailLink = (body, subj=L().subjEst) => `mailto:${CONFIG.email}?subject=${encodeURIComponent(subj)}${body?`&body=${encodeURIComponent(body)}`:""}`;
 CONFIG.ighandle = "@" + CONFIG.instagram;
 document.querySelectorAll("[data-show]").forEach(el => el.textContent = CONFIG[el.dataset.show]);
-document.querySelectorAll("[data-link]").forEach(el => {
-  const k = el.dataset.link, hi = "Hi GlassMaster! I'd like to know more about your services.";
-  el.href = k==="sms" ? smsLink(hi) : k==="wa" ? waLink(hi) : k==="ig" ? `https://www.instagram.com/${CONFIG.instagram}/` : mailLink("", "Question about your services");
-  if(k==="wa"||k==="ig") { el.target="_blank"; el.rel="noopener"; }
-});
+function setLinks(){
+  document.querySelectorAll("[data-link]").forEach(el => {
+    const k = el.dataset.link, hi = L().hi;
+    el.href = k==="sms" ? smsLink(hi) : k==="wa" ? waLink(hi) : k==="ig" ? `https://www.instagram.com/${CONFIG.instagram}/` : mailLink("", L().subjQ);
+    if(k==="wa"||k==="ig") { el.target="_blank"; el.rel="noopener"; }
+  });
+}
 if(!CONFIG.email) document.querySelectorAll('[data-needs="email"]').forEach(el=>el.remove());
-if(CONFIG.area) $("#area-line").textContent = CONFIG.area + ". " + $("#area-line").textContent;
 $("#yr").textContent = new Date().getFullYear();
 
 /* ===== services section ===== */
-$("#svc-list").innerHTML = SERVICES.map((s,i)=>`
+const renderServices = () => $("#svc-list").innerHTML = SERVICES.map((s,i)=>`
   <article class="svc reveal">
     ${photo(s.photo,"svc-photo")}
     <div class="svc-body">
@@ -561,7 +698,7 @@ $("#svc-list").innerHTML = SERVICES.map((s,i)=>`
       <p class="what">${s.what}</p>
       <ul class="benefits">${s.benefits.map(b=>`<li>${b}</li>`).join("")}</ul>
       <p class="note">${s.note}</p>
-      <a class="btn btn-primary" href="#quote" data-pre="${s.id}">Get an estimate</a>
+      <a class="btn btn-primary" href="#quote" data-pre="${s.id}">${L().getEst}</a>
     </div>
   </article>`).join("");
 
@@ -585,42 +722,42 @@ function render(){
   const cur = list[state.step], body = $("#wz-body");
   let html = "", label = "";
   if(cur==="pick"){
-    label = "Choose your services";
-    html = `<div class="wz-step on"><h3>What can we help you with?</h3><p class="sub">Select one or more services.</p>
+    label = L().pickLabel;
+    html = `<div class="wz-step on"><h3>${L().pickH}</h3><p class="sub">${L().pickSub}</p>
       <div class="pick-grid">${SERVICES.map(s=>`<button type="button" class="pick" data-pick="${s.id}" aria-pressed="${state.picked.has(s.id)}">${photo(s.photo)}<span class="tick"></span><div class="t">${s.name}</div></button>`).join("")}</div>
-      <button type="button" class="select-all" id="sel-all">${state.picked.size===SERVICES.length?"Clear selection":"Select all services"}</button></div>`;
+      <button type="button" class="select-all" id="sel-all">${state.picked.size===SERVICES.length?L().clearSel:L().selAll}</button></div>`;
   } else if(cur==="contact"){
-    label = "Your contact details";
+    label = L().contactLabel;
     const c = state.contact;
-    html = `<div class="wz-step on"><h3>Where should we send your estimate?</h3><p class="sub">We only ask this once.</p>
+    html = `<div class="wz-step on"><h3>${L().contactH}</h3><p class="sub">${L().contactSub}</p>
       <div class="grid2">${CONTACT_Q.slice(0,4).map(q=>questionHTML("contact",q,c[q.id])).join("")}</div>
       ${questionHTML("contact",CONTACT_Q[4],c.ptype)}</div>`;
   } else if(cur==="review"){
-    label = "Review & send";
+    label = L().reviewLabel;
     const msg = buildMessage();
-    html = `<div class="wz-step on"><h3>All set, ${esc(state.contact.name.split(" ")[0])}!</h3><p class="sub">Send your request with one tap. The message opens ready to go, you just press send.</p>
-      <div class="summary" tabindex="0" role="region" aria-label="Your request">${esc(msg)}</div>
+    html = `<div class="wz-step on"><h3>${L().allSet}, ${esc(state.contact.name.split(" ")[0])}!</h3><p class="sub">${L().reviewSub}</p>
+      <div class="summary" tabindex="0" role="region" aria-label="${L().region}">${esc(msg)}</div>
       <div class="send">
-        <a class="btn btn-primary" href="${smsLink(msg)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/></svg>Send by text message</a>
-        <a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Send on WhatsApp</a>
-        ${CONFIG.email?`<a class="btn btn-mail" href="${mailLink(msg)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Send by email</a>`:""}
-        <button type="button" class="btn btn-light" id="copy">Copy summary</button>
+        <a class="btn btn-primary" href="${smsLink(msg)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/></svg>${L().sendSms}</a>
+        <a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>${L().sendWa}</a>
+        ${CONFIG.email?`<a class="btn btn-mail" href="${mailLink(msg)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>${L().sendMail}</a>`:""}
+        <button type="button" class="btn btn-light" id="copy">${L().copy}</button>
       </div>
-      <p class="send-note">${state.answers.hardwater?.photos?.startsWith("Yes")?"Don't forget to attach the photos of the stained glass to the message. ":""}</p>
-      <p class="send-note">By sending this request, you agree that GlassMaster Cleaning may contact you about your estimate by text, WhatsApp, phone or email. Message and data rates may apply. We never sell your information. <a href="privacy.html">Privacy Policy</a></p></div>`;
+      <p class="send-note">${state.answers.hardwater?.photos?.startsWith(L().yes)?L().photosNote:""}</p>
+      <p class="send-note">${L().consent}</p></div>`;
   } else {
     const s = SERVICES.find(x=>x.id===cur), a = state.answers[cur] ||= {};
     label = s.name;
-    html = `<div class="wz-step on"><div class="svc-banner">${photo(s.photo)}<div><small>Service ${list.indexOf(cur)} of ${state.picked.size}</small><h3>${s.name}</h3></div></div>
+    html = `<div class="wz-step on"><div class="svc-banner">${photo(s.photo)}<div><small>${L().serviceOf(list.indexOf(cur), state.picked.size)}</small><h3>${s.name}</h3></div></div>
       ${s.questions.map(q=>questionHTML(cur,q,a[q.id])).join("")}</div>`;
   }
   body.innerHTML = html; loadPhotos(body);
   $("#wz-label").textContent = label;
-  $("#wz-count").textContent = `Step ${state.step+1} of ${list.length}`;
+  $("#wz-count").textContent = L().stepOf(state.step+1, list.length);
   $("#wz-bar").style.width = `${((state.step+1)/list.length)*100}%`;
   $("#wz-back").style.visibility = state.step ? "visible" : "hidden";
   $("#wz-next").style.display = cur==="review" ? "none" : "";
-  $("#wz-next").textContent = list[state.step+1]==="review" ? "Review my request" : "Continue";
+  $("#wz-next").textContent = list[state.step+1]==="review" ? L().reviewBtn : L().cont;
 }
 
 function store(el){
@@ -640,7 +777,7 @@ function store(el){
 
 function validate(){
   const cur = steps()[state.step];
-  if(cur==="pick"){ if(!state.picked.size){ toast("Choose at least one service"); return false; } return true; }
+  if(cur==="pick"){ if(!state.picked.size){ toast(L().chooseOne); return false; } return true; }
   const qs = cur==="contact" ? CONTACT_Q : SERVICES.find(s=>s.id===cur).questions;
   const bucket = cur==="contact" ? state.contact : state.answers[cur];
   let bad = null;
@@ -651,43 +788,71 @@ function validate(){
     if(ok && q.type==="tel") ok = v.replace(/\D/g,"").length>=7;
     if(!ok){ const el = $(`#wz-body .q[data-qid="${q.id}"]`); el.classList.add("err"); el.querySelector("input,textarea")?.setAttribute("aria-invalid","true"); bad ||= el; }
   });
-  if(bad){ bad.scrollIntoView({behavior:"smooth",block:"center"}); bad.querySelector("input,textarea,button")?.focus({preventScroll:true}); toast("Please answer the highlighted question"); return false; }
+  if(bad){ bad.scrollIntoView({behavior:"smooth",block:"center"}); bad.querySelector("input,textarea,button")?.focus({preventScroll:true}); toast(L().answerHl); return false; }
   return true;
 }
 
 function buildMessage(){
-  const c = state.contact, lines = ["Hi GlassMaster! I'd like an estimate.", ""];
+  const c = state.contact, T = L(), lines = [T.msgStart, ""];
   SERVICES.filter(s=>state.picked.has(s.id)).forEach(s=>{
     lines.push(`▸ ${s.name.toUpperCase()}`);
     const a = state.answers[s.id] || {};
     s.questions.forEach(q=>{
       const v = a[q.id]; if(!v || (Array.isArray(v)&&!v.length)) return;
-      lines.push(`• ${q.q.replace(/\?$/,"")}: ${Array.isArray(v)?v.join(", "):v}`);
+      lines.push(`• ${q.q.replace(/^¿|\?$/g,"")}: ${Array.isArray(v)?v.join(", "):v}`);
     });
     lines.push("");
   });
-  lines.push("▸ CONTACT", `• Name: ${c.name}`, `• Phone: ${c.phone}`, `• Email: ${c.email}`, `• Address: ${c.address}`, `• Property: ${c.ptype}`);
+  lines.push(`▸ ${T.contactHdr}`, `• ${T.fName}: ${c.name}`, `• ${T.fPhone}: ${c.phone}`, `• ${T.fEmail}: ${c.email}`, `• ${T.fAddress}: ${c.address}`, `• ${T.fProperty}: ${c.ptype}`);
   return lines.join("\n");
 }
 
 $("#wizard").addEventListener("click", e=>{
   const pick = e.target.closest("[data-pick]"), opt = e.target.closest(".opt");
-  if(pick){ const id = pick.dataset.pick; state.picked.has(id) ? state.picked.delete(id) : state.picked.add(id); pick.setAttribute("aria-pressed", state.picked.has(id)); $("#sel-all").textContent = state.picked.size===SERVICES.length?"Clear selection":"Select all services"; }
+  if(pick){ const id = pick.dataset.pick; state.picked.has(id) ? state.picked.delete(id) : state.picked.add(id); pick.setAttribute("aria-pressed", state.picked.has(id)); $("#sel-all").textContent = state.picked.size===SERVICES.length?L().clearSel:L().selAll; }
   else if(e.target.id==="sel-all"){ state.picked.size===SERVICES.length ? state.picked.clear() : SERVICES.forEach(s=>state.picked.add(s.id)); render(); }
   else if(opt) store(opt);
-  else if(e.target.id==="copy"){ navigator.clipboard?.writeText(buildMessage()).then(()=>toast("Summary copied"),()=>toast("Could not copy")); }
+  else if(e.target.id==="copy"){ navigator.clipboard?.writeText(buildMessage()).then(()=>toast(L().copied),()=>toast(L().noCopy)); }
 });
 $("#wizard").addEventListener("input", e=>{ if(e.target.dataset.q) store(e.target); });
 /* move keyboard / screen reader focus to the new step title */
 const focusStep = ()=>{ const h=$("#wz-body h3"); if(h){ h.tabIndex=-1; h.focus({preventScroll:true}); } };
 $("#wz-next").onclick = ()=>{ if(validate()){ state.step++; render(); focusStep(); $("#wizard").scrollIntoView({behavior:"smooth",block:"start"}); } };
 $("#wz-back").onclick = ()=>{ state.step--; render(); focusStep(); };
-document.querySelectorAll("[data-pre]").forEach(a=>a.addEventListener("click",()=>{ state.picked.add(a.dataset.pre); state.step=0; render(); }));
+$("#svc-list").addEventListener("click", e=>{ const a=e.target.closest("[data-pre]"); if(a){ state.picked.add(a.dataset.pre); state.step=0; render(); } });
+
+/* ===== language ===== */
+const TEXT_EN = {}, ALT_EN = {};
+document.querySelectorAll("[data-i18n]").forEach(el => TEXT_EN[el.dataset.i18n] = el.innerHTML);
+document.querySelectorAll("[data-i18n-alt]").forEach(el => ALT_EN[el.dataset.i18nAlt] = el.alt);
+function applyLang(lang){
+  LANG = lang;
+  const es = lang==="es", T = L();
+  SERVICES = es ? SERVICES_ES : SERVICES_EN; CONTACT_Q = es ? CONTACT_Q_ES : CONTACT_Q_EN;
+  document.documentElement.lang = lang; document.title = T.title;
+  document.querySelectorAll("[data-i18n]").forEach(el => { const k = el.dataset.i18n; el.innerHTML = es && TEXT_ES[k] ? TEXT_ES[k] : TEXT_EN[k]; });
+  document.querySelectorAll("[data-i18n-alt]").forEach(el => { const k = el.dataset.i18nAlt; el.alt = es ? ALT_ES[k] : ALT_EN[k]; });
+  if(T.area) $("#area-line").textContent = T.area + ". " + $("#area-line").textContent;
+  $("#privacy-link").href = T.privacy;
+  const b = $("#lang-btn"); b.textContent = T.langBtn; b.lang = T.langOther; b.setAttribute("aria-label", T.langLabel);
+  setLinks(); renderServices(); loadPhotos($("#svc-list"));
+  /* answers are stored as option labels, so a language change starts the estimate over */
+  state.answers = {}; state.step = Math.min(state.step, 0); render();
+  /* content swapped after first load is shown right away, without the scroll animation */
+  if(window.io) document.querySelectorAll("#svc-list .reveal, [data-i18n] .reveal").forEach(el=>el.classList.add("in"));
+}
+$("#lang-btn").addEventListener("click", ()=>{
+  const next = LANG==="es" ? "en" : "es";
+  try { localStorage.setItem("gm-lang", next); } catch(e){}
+  applyLang(next);
+  const u = new URL(location.href); u.searchParams.set("lang", next); history.replaceState(null, "", u);
+  $("#lang-btn").focus();
+});
 
 /* ===== page behaviour ===== */
-render(); loadPhotos();
+applyLang(LANG); loadPhotos();
 const bar = $("#top-bar"); const onScroll=()=>bar.classList.toggle("solid", scrollY>40); addEventListener("scroll",onScroll,{passive:true}); onScroll();
-const io = new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target);} }),{threshold:.12});
+window.io = new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target);} }),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 </script>
 </body>

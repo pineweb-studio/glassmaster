@@ -34,3 +34,12 @@ O questionário monta uma mensagem com todas as respostas. O cliente envia por S
 Antes de publicar qualquer foto nova, conferir se aparece número de casa, placa de carro, rosto de cliente ou nome de empresa. Já foram borrados: os números das casas (pressure-washing.jpg e work-1.jpg) e a placa na parede (work-2.jpg). A logo do banco Amerant em commercial.jpg fica sem borrar, a pedido do Fellipe (28/out).
 
 Site feito por [Fellipe Pinho](https://github.com/felliperobertopinhopires-tech) · PineWeb
+
+## Inglês e espanhol
+
+O site tem os dois idiomas na mesma página, com o botão EN/ES no topo. Abre em espanhol quando o navegador do visitante está em espanhol, quando o link tem `?lang=es` (ex.: https://glassmaster.pages.dev/?lang=es) ou quando a pessoa já escolheu ES antes. O mesmo vale para `?lang=en`.
+
+- Textos fixos da página: o inglês fica no próprio HTML (marcado com `data-i18n`) e o espanhol no objeto `TEXT_ES` do script.
+- Serviços e perguntas do orçamento: `SERVICES_EN` / `SERVICES_ES` e `CONTACT_Q_EN` / `CONTACT_Q_ES`. Ao mudar um serviço, mudar nos dois.
+- Botões, avisos e a mensagem de orçamento: objeto `UI` (`en` e `es`). O pedido chega no idioma que o cliente usou.
+- Privacidade: `privacy.html` (inglês) e `privacy-es.html` (espanhol). Se mudar uma, mudar a outra.
