@@ -336,7 +336,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
         <p data-i18n="w_p">A few of the properties we care for across South Florida.</p>
       </div>
       <div class="gallery" id="gallery"></div>
-      <p style="margin-top:24px"><a class="btn btn-light" data-link="ig" href="#" data-i18n="w_ig">See more on Instagram</a></p>
+      <p style="margin-top:24px;display:flex;flex-wrap:wrap;gap:12px"><a class="btn btn-light" data-link="ig" href="#" data-i18n="w_ig">See more on Instagram</a><a class="btn btn-light" data-link="reviews" href="#" data-i18n="w_rev">Read our reviews on Google</a></p>
     </div>
   </section>
 
@@ -433,6 +433,7 @@ const CONFIG = {
   phoneDigits: "17542725100",   // country code + number, digits only (texts & WhatsApp)
   email: "masterglass89@gmail.com", // leave empty to hide the email options
   instagram: "glassmastercleaning",
+  reviews: "https://share.google/psCZiamiwQSyMjKF9", // Google Business Profile (GLASSMASTER GPM CORP); leave empty to hide the button
   area: "Serving Broward, Palm Beach and Miami-Dade counties"
 };
 
@@ -621,7 +622,7 @@ const TEXT_ES = {
   hw_steps:'<div class="step"><b>1</b><div><strong>Cuéntenos qué necesita</strong><span>Elija uno o más servicios y responda unas preguntas rápidas.</span></div></div><div class="step"><b>2</b><div><strong>Envíelo con un toque</strong><span>Sus respuestas nos llegan directo por mensaje de texto o WhatsApp.</span></div></div><div class="step"><b>3</b><div><strong>Reciba su presupuesto</strong><span>Le recomendamos un plan de servicio y le enviamos un precio personalizado.</span></div></div>',
   q_e:"Pida un presupuesto", q_h:'Su presupuesto en <span class="serif">un minuto, más o menos.</span>', q_p:"Responda solo las preguntas de los servicios que elija. Sus datos de contacto se piden una sola vez, al final.",
   back:"Atrás",
-  w_e:"Trabajos recientes", w_h:'Casas que mantenemos <span class="serif">impecables.</span>', w_p:"Algunas de las propiedades que cuidamos en el sur de la Florida.", w_ig:"Vea más en Instagram",
+  w_e:"Trabajos recientes", w_h:'Casas que mantenemos <span class="serif">impecables.</span>', w_p:"Algunas de las propiedades que cuidamos en el sur de la Florida.", w_ig:"Vea más en Instagram", w_rev:"Lea nuestras reseñas en Google",
   ba_e:"Antes y después", ba_h:'Vea la <span class="serif">diferencia.</span>', ba_before:"Antes", ba_after:"Después",
   ba_c1:"<strong>Vidrio de ducha · manchas de agua dura</strong>Manchas minerales y capa opaca eliminadas de una mampara de vidrio.",
   ba_c2:"<strong>Ventanas y pared exterior</strong>Marcos de ventana y la pared de abajo limpios de la capa verde.",
@@ -641,10 +642,8 @@ const ALT_ES = {
   "par2-after":"La misma ventana y la pared limpias después de la limpieza exterior"
 };
 
-/* current language: ?lang=, then the visitor's saved choice, then the browser language */
-const savedLang = (() => { try { return localStorage.getItem("gm-lang"); } catch(e){ return null; } })();
-let LANG = new URLSearchParams(location.search).get("lang") || savedLang || ((navigator.language||"").toLowerCase().startsWith("es") ? "es" : "en");
-if(LANG!=="es") LANG = "en";
+/* the site always opens in English; Spanish only with the ES button or a ?lang=es link */
+let LANG = new URLSearchParams(location.search).get("lang")==="es" ? "es" : "en";
 const L = () => UI[LANG];
 let SERVICES = SERVICES_EN, CONTACT_Q = CONTACT_Q_EN;
 
@@ -681,11 +680,12 @@ document.querySelectorAll("[data-show]").forEach(el => el.textContent = CONFIG[e
 function setLinks(){
   document.querySelectorAll("[data-link]").forEach(el => {
     const k = el.dataset.link, hi = L().hi;
-    el.href = k==="sms" ? smsLink(hi) : k==="wa" ? waLink(hi) : k==="ig" ? `https://www.instagram.com/${CONFIG.instagram}/` : mailLink("", L().subjQ);
-    if(k==="wa"||k==="ig") { el.target="_blank"; el.rel="noopener"; }
+    el.href = k==="sms" ? smsLink(hi) : k==="wa" ? waLink(hi) : k==="ig" ? `https://www.instagram.com/${CONFIG.instagram}/` : k==="reviews" ? CONFIG.reviews : mailLink("", L().subjQ);
+    if(k==="wa"||k==="ig"||k==="reviews") { el.target="_blank"; el.rel="noopener"; }
   });
 }
 if(!CONFIG.email) document.querySelectorAll('[data-needs="email"]').forEach(el=>el.remove());
+if(!CONFIG.reviews) document.querySelectorAll('[data-link="reviews"]').forEach(el=>el.remove());
 $("#yr").textContent = new Date().getFullYear();
 
 /* ===== services section ===== */
@@ -843,7 +843,6 @@ function applyLang(lang){
 }
 $("#lang-btn").addEventListener("click", ()=>{
   const next = LANG==="es" ? "en" : "es";
-  try { localStorage.setItem("gm-lang", next); } catch(e){}
   applyLang(next);
   const u = new URL(location.href); u.searchParams.set("lang", next); history.replaceState(null, "", u);
   $("#lang-btn").focus();

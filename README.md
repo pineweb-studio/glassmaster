@@ -37,9 +37,13 @@ Site feito por [Fellipe Pinho](https://github.com/felliperobertopinhopires-tech)
 
 ## Inglês e espanhol
 
-O site tem os dois idiomas na mesma página, com o botão EN/ES no topo. Abre em espanhol quando o navegador do visitante está em espanhol, quando o link tem `?lang=es` (ex.: https://glassmaster.pages.dev/?lang=es) ou quando a pessoa já escolheu ES antes. O mesmo vale para `?lang=en`.
+O site tem os dois idiomas na mesma página, com o botão EN/ES no topo. Sempre abre em inglês (pedido do Fellipe, 28/out). O espanhol só aparece quando a pessoa clica em ES ou abre um link com `?lang=es` (ex.: https://glassmaster.pages.dev/?lang=es).
 
 - Textos fixos da página: o inglês fica no próprio HTML (marcado com `data-i18n`) e o espanhol no objeto `TEXT_ES` do script.
 - Serviços e perguntas do orçamento: `SERVICES_EN` / `SERVICES_ES` e `CONTACT_Q_EN` / `CONTACT_Q_ES`. Ao mudar um serviço, mudar nos dois.
 - Botões, avisos e a mensagem de orçamento: objeto `UI` (`en` e `es`). O pedido chega no idioma que o cliente usou.
 - Privacidade: `privacy.html` (inglês) e `privacy-es.html` (espanhol). Se mudar uma, mudar a outra.
+
+## Avaliações
+
+Botão "Read our reviews on Google" na seção de trabalhos recentes, ligado ao perfil do Google GLASSMASTER GPM CORP (`CONFIG.reviews`). O site não mostra nota nem depoimento copiado: só o link para as avaliações reais no Google.
