@@ -361,6 +361,20 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:40px 0;font-siz
           </div>
           <figcaption data-i18n="ba_c2"><strong>Windows &amp; exterior wall</strong>Window frames and the wall below cleaned of green buildup.</figcaption>
         </figure>
+        <figure class="ba reveal">
+          <div class="ba-pics">
+            <div><img src="img/before-after/par3-before.jpg" alt="Stone pool deck next to the house covered in dark dirt and mildew before pressure washing" data-i18n-alt="par3-before" width="720" height="960" loading="lazy"><span class="ba-tag" data-i18n="ba_before">Before</span></div>
+            <div><img src="img/before-after/par3-after.jpg" alt="The same pool deck light and clean after pressure washing" data-i18n-alt="par3-after" width="720" height="960" loading="lazy"><span class="ba-tag after" data-i18n="ba_after">After</span></div>
+          </div>
+          <figcaption data-i18n="ba_c3"><strong>Pool deck · pressure washing</strong>Dark dirt and mildew removed from the stone deck along the pool.</figcaption>
+        </figure>
+        <figure class="ba reveal">
+          <div class="ba-pics">
+            <div><img src="img/before-after/par4-before.jpg" alt="Side walkway pavers dark with dirt and mildew before pressure washing" data-i18n-alt="par4-before" width="720" height="960" loading="lazy"><span class="ba-tag" data-i18n="ba_before">Before</span></div>
+            <div><img src="img/before-after/par4-after.jpg" alt="The same side walkway clean and bright after pressure washing" data-i18n-alt="par4-after" width="720" height="960" loading="lazy"><span class="ba-tag after" data-i18n="ba_after">After</span></div>
+          </div>
+          <figcaption data-i18n="ba_c4"><strong>Side walkway · pressure washing</strong>Built-up grime washed off the pavers beside the house.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -447,8 +461,8 @@ const FOTOS = {
   power: "img/pressure-washing.jpg",
   solar: "img/solar.jpg",
   logo: "img/logo.png",
-  /* gallery, in display order (11-13: the client's Instagram picks (11, 13 now from the WhatsApp originals); 14-24: Site-2 folder; 25-34: WhatsApp photos) */
-  work: [11,25,26,27,13,30,31,32,33,12,14,15,16,17,18,19,20,21,22,23,24,28,29,34,1,2,3,4,5,6,7,8,9].map(n=>`img/work-${n}.jpg`)
+  /* gallery, in display order (11-13: the client's Instagram picks (11, 13 from the WhatsApp originals); 14-24: Site-2 folder; 25-33: WhatsApp photos. Photos showing dirt go to Before & after, not here. Keep the count at 23, 26, 30 or 33 so the grid has no gaps) */
+  work: [11,25,26,27,13,30,31,28,33,12,14,15,16,18,19,20,21,22,23,24,29,1,2,3,4,5,6,7,8,9].map(n=>`img/work-${n}.jpg`)
 };
 
 /* Which part of a photo stays visible when it is cropped */
@@ -627,6 +641,8 @@ const TEXT_ES = {
   ba_e:"Antes y después", ba_h:'Vea la <span class="serif">diferencia.</span>', ba_before:"Antes", ba_after:"Después",
   ba_c1:"<strong>Vidrio de ducha · manchas de agua dura</strong>Manchas minerales y capa opaca eliminadas de una mampara de vidrio.",
   ba_c2:"<strong>Ventanas y pared exterior</strong>Marcos de ventana y la pared de abajo limpios de la capa verde.",
+  ba_c3:"<strong>Deck de piscina · lavado a presión</strong>Suciedad oscura y moho eliminados del deck de piedra junto a la piscina.",
+  ba_c4:"<strong>Pasillo lateral · lavado a presión</strong>Suciedad acumulada eliminada de los adoquines junto a la casa.",
   ar_e:"Área de servicio", ar_h:'Cuidado profesional de vidrios en todo <span class="serif">el sur de la Florida.</span>', ar_p:"¿No ve su ciudad? Envíenos un mensaje y verificamos la disponibilidad en su zona.",
   ar_main:"Zona principal", ar_n:"Norte", ar_s:"Sur", ar_bw:"Condado de Broward", ar_pb:"Condado de Palm Beach", ar_md:"Condado de Miami-Dade",
   fq_e:"Preguntas frecuentes", fq_h:'Buenas preguntas, <span class="serif">respuestas claras.</span>',
@@ -640,7 +656,11 @@ const ALT_ES = {
   "par1-before":"Mampara de vidrio de ducha cubierta de manchas blancas de agua dura antes de la limpieza",
   "par1-after":"El mismo vidrio de ducha transparente y sin manchas después de quitar el agua dura",
   "par2-before":"Ventana exterior con manchas verdes en la pared de abajo antes de la limpieza",
-  "par2-after":"La misma ventana y la pared limpias después de la limpieza exterior"
+  "par2-after":"La misma ventana y la pared limpias después de la limpieza exterior",
+  "par3-before":"Deck de piedra de la piscina junto a la casa cubierto de suciedad oscura y moho antes del lavado a presión",
+  "par3-after":"El mismo deck de la piscina claro y limpio después del lavado a presión",
+  "par4-before":"Adoquines del pasillo lateral oscuros por la suciedad y el moho antes del lavado a presión",
+  "par4-after":"El mismo pasillo lateral limpio y claro después del lavado a presión"
 };
 
 /* the site always opens in English; Spanish only with the ES button or a ?lang=es link */
