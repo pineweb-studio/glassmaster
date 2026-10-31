@@ -38,7 +38,7 @@ Site feito por [Fellipe Pinho](https://github.com/felliperobertopinhopires-tech)
 
 ## Inglês e espanhol
 
-O site tem os dois idiomas na mesma página, com o botão EN/ES no topo. Sempre abre em inglês (pedido do Fellipe, 28/out). O espanhol só aparece quando a pessoa clica em ES ou abre um link com `?lang=es` (ex.: https://glassmaster.pages.dev/?lang=es).
+O site tem os dois idiomas na mesma página, com o botão EN/ES no topo. Sempre abre em inglês (pedido do Fellipe, 28/out). O espanhol só aparece quando a pessoa clica em ES ou abre um link com `?lang=es` (ex.: https://glassmastercleaning.com/?lang=es).
 
 - Textos fixos da página: o inglês fica no próprio HTML (marcado com `data-i18n`) e o espanhol no objeto `TEXT_ES` do script.
 - Serviços e perguntas do orçamento: `SERVICES_EN` / `SERVICES_ES` e `CONTACT_Q_EN` / `CONTACT_Q_ES`. Ao mudar um serviço, mudar nos dois.
@@ -59,4 +59,4 @@ Segue o PDF "Padrão SEO Pine Web". O que já está no site, sem mudar o visual:
 - alt descritivo em todas as fotos (`PHOTO_ALT` no script, inglês e espanhol; foto nova na galeria precisa de alt novo lá);
 - nome, serviço + região, telefone e e-mail como texto no rodapé (igual ao perfil do Google);
 - `robots.txt` e `sitemap.xml`.
-Quando o domínio próprio entrar, trocar `glassmaster.pages.dev` por ele em index.html, robots.txt e sitemap.xml.
+Domínio próprio no ar desde 1/nov/2026: https://glassmastercleaning.com (comprado na conta Cloudflare da PineWeb, registrante GLASSMASTER GPM CORP, vence 1/nov/2027, renovação automática). Canonical, Open Graph, JSON-LD, hreflang, robots.txt e sitemap.xml já usam o domínio. O endereço glassmaster.pages.dev continua abrindo o mesmo site.
