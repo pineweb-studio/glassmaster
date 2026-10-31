@@ -48,3 +48,15 @@ O site tem os dois idiomas na mesma página, com o botão EN/ES no topo. Sempre 
 ## Avaliações
 
 Botão "Read our reviews on Google" na seção de trabalhos recentes, ligado ao perfil do Google GLASSMASTER GPM CORP (`CONFIG.reviews`). O site não mostra nota nem depoimento copiado: só o link para as avaliações reais no Google.
+
+## SEO local (padrão Pine Web, 31/out)
+
+Segue o PDF "Padrão SEO Pine Web". O que já está no site, sem mudar o visual:
+- title e meta description com serviço + região, Open Graph, Twitter card, canonical e hreflang (en-US na raiz, es-US em `?lang=es`, cada um com o próprio canonical);
+- JSON-LD com a empresa (cidades e condados atendidos, catálogo dos 5 serviços, Instagram), o site e o FAQ (o texto do FAQPage tem que ser igual ao FAQ visível);
+- H1 único: a linha pequena do topo ("Window cleaning & pressure washing in South Florida"); o slogan virou parágrafo com o mesmo estilo;
+- links de SMS, WhatsApp, e-mail e Instagram escritos direto no HTML, com `title`;
+- alt descritivo em todas as fotos (`PHOTO_ALT` no script, inglês e espanhol; foto nova na galeria precisa de alt novo lá);
+- nome, serviço + região, telefone e e-mail como texto no rodapé (igual ao perfil do Google);
+- `robots.txt` e `sitemap.xml`.
+Quando o domínio próprio entrar, trocar `glassmaster.pages.dev` por ele em index.html, robots.txt e sitemap.xml.
