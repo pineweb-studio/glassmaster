@@ -17,7 +17,7 @@ Suba na pasta `img/` com o nome exato abaixo (`.jpg`, de preferência na horizon
 | `img/residential.jpg` | Limpeza de vidros residenciais |
 | `img/commercial.jpg` | Limpeza de vidros comerciais |
 | `img/hard-water.jpg` | Remoção de manchas de água dura |
-| `img/pressure-washing.jpg` | Lavagem com alta pressão |
+| `img/pressure-washing-before-after.jpg` | Lavagem com alta pressão (antes e depois do deck da piscina, escolhido pelo Fellipe em 7/nov) |
 | `img/solar.jpg` | Limpeza de painéis solares (foto do Pexels, uso comercial livre) |
 | `img/logo.png` | Logo redonda (topo e rodapé) |
 | `img/logo-full.png` | Logo completa (reserva) |
