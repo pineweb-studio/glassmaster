@@ -1,5 +1,0 @@
-{
-  "version": 1,
-  "include": ["/api/*", "/lib/*", "/functions/*", "/lembretes/*", "/_routes.json"],
-  "exclude": []
-}
