@@ -60,3 +60,7 @@ Segue o PDF "Padrão SEO Pine Web". O que já está no site, sem mudar o visual:
 - nome, serviço + região, telefone e e-mail como texto no rodapé (igual ao perfil do Google);
 - `robots.txt` e `sitemap.xml`.
 Domínio próprio no ar desde 1/nov/2026: https://glassmastercleaning.com (comprado na conta Cloudflare da PineWeb, registrante GLASSMASTER GPM CORP, vence 1/nov/2027, renovação automática). Canonical, Open Graph, JSON-LD, hreflang, robots.txt e sitemap.xml já usam o domínio. O endereço glassmaster.pages.dev continua abrindo o mesmo site.
+
+## Sistema de agenda (separado)
+
+A agenda, o cadastro de clientes e os lembretes de limpeza do Greg ficam num sistema separado, em https://agenda.glassmastercleaning.com (repositório `pineweb-studio/glassmaster-agenda`). Este site não guarda dados de ninguém. A política de privacidade (`privacy.html` e `privacy-es.html`) explica o registro de clientes desse sistema.
